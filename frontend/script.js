@@ -148,29 +148,72 @@ if (contactForm) {
 
 // Music toggle
 const musicToggle = document.getElementById('music-toggle');
-const musicUrl = 'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Supersonic.Shadows.mp3';
+const musicSources = [
+  '/audio',
+  'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Supersonic.Shadows.mp3',
+];
 
 if (musicToggle) {
   let track = null;
+  let currentSource = 0;
+  let fallbackInProgress = false;
+
+  function logMusicError(context, err) {
+    const code = track && track.error ? ` (media error code ${track.error.code})` : '';
+    console.error(`Music ${context} failed:${code}`, err || '');
+  }
+
+  function setSource() {
+    if (!track) {
+      track = new Audio();
+      track.loop = true;
+      track.preload = 'metadata';
+      track.addEventListener('error', () => {
+        logMusicError('source load');
+        tryNextSource();
+      });
+    }
+    track.src = musicSources[currentSource];
+  }
+
+  function markOn() {
+    musicToggle.setAttribute('aria-pressed', 'true');
+    musicToggle.classList.add('is-on');
+  }
+
+  function markOff() {
+    musicToggle.setAttribute('aria-pressed', 'false');
+    musicToggle.classList.remove('is-on');
+  }
+
+  function tryNextSource() {
+    if (fallbackInProgress || currentSource >= musicSources.length - 1) return;
+    fallbackInProgress = true;
+    currentSource += 1;
+    setSource();
+    track.play().then(() => {
+      fallbackInProgress = false;
+      markOn();
+    }).catch((err) => {
+      fallbackInProgress = false;
+      logMusicError('fallback playback', err);
+      markOff();
+    });
+  }
 
   musicToggle.addEventListener('click', () => {
     if (!track) {
-      track = new Audio(musicUrl);
-      track.loop = true;
-      track.preload = 'none';
+      setSource();
     }
 
     if (track.paused) {
-      track.play().then(() => {
-        musicToggle.setAttribute('aria-pressed', 'true');
-        musicToggle.classList.add('is-on');
-      }).catch((err) => {
-        console.error('Playback failed:', err);
+      track.play().then(markOn).catch((err) => {
+        logMusicError('playback', err);
+        tryNextSource();
       });
     } else {
       track.pause();
-      musicToggle.setAttribute('aria-pressed', 'false');
-      musicToggle.classList.remove('is-on');
+      markOff();
     }
   });
 }

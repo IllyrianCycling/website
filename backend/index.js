@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
+const https = require('https');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const { Resend } = require('resend');
@@ -15,6 +16,7 @@ const {
   SITE_NAME = 'Illyrian Cycling',
   PORT,
   ALLOWED_ORIGINS = '',
+  MUSIC_URL = 'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Supersonic.Shadows.mp3',
 } = process.env;
 
 const allowedOrigins = ALLOWED_ORIGINS.split(',').map((origin) => origin.trim()).filter(Boolean);
@@ -49,6 +51,51 @@ app.use(cors(
 ));
 app.use(express.json({ limit: '10kb' }));
 app.use(express.static(FRONTEND_DIR));
+
+// Music proxy: GitHub release assets are served as application/octet-stream,
+// which browsers refuse for <audio>. Stream the asset with the correct MIME
+// type and preserve HTTP range requests.
+function streamMusic(req, res, url, redirectsLeft = 5) {
+  const headers = {};
+  if (req.headers.range) headers.Range = req.headers.range;
+  if (req.headers['if-range']) headers['If-Range'] = req.headers['if-range'];
+
+  https.get(url, { headers }, (upstream) => {
+    if ([301, 302, 303, 307, 308].includes(upstream.statusCode) && upstream.headers.location) {
+      upstream.resume();
+      if (redirectsLeft <= 0) {
+        res.status(502).end();
+        return;
+      }
+      streamMusic(req, res, upstream.headers.location, redirectsLeft - 1);
+      return;
+    }
+
+    res.status(upstream.statusCode);
+    res.set('Content-Type', 'audio/mpeg');
+    res.set('Accept-Ranges', upstream.headers['accept-ranges'] || 'bytes');
+    if (upstream.headers['content-length']) {
+      res.set('Content-Length', upstream.headers['content-length']);
+    }
+    if (upstream.headers['content-range']) {
+      res.set('Content-Range', upstream.headers['content-range']);
+    }
+    res.set('Cache-Control', 'public, max-age=86400');
+
+    upstream.on('error', (err) => {
+      console.error('Music proxy upstream error:', err);
+      res.destroy();
+    });
+    upstream.pipe(res);
+  }).on('error', (err) => {
+    console.error('Music proxy request error:', err);
+    res.status(502).end();
+  });
+}
+
+app.get('/audio', (req, res) => {
+  streamMusic(req, res, MUSIC_URL);
+});
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
