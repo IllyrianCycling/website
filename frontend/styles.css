@@ -568,6 +568,21 @@ footer {
     display: block;
   }
 
+  .music-toggle {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 44px;
+    height: 44px;
+    font-size: 0.52rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.13);
+    opacity: 0.8;
+  }
+
+  .music-toggle:hover {
+    opacity: 1;
+  }
+
   .info-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
