@@ -11,6 +11,8 @@ on:
 jobs:
   seo:
     runs-on: ubuntu-latest
+    env:
+      GOOGLE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,8 +46,6 @@ jobs:
           path: ${{ github.workspace }}/crawl-report.json
 
       - name: Notify Google Indexing API
-        if: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON != '' }}
+        if: env.GOOGLE_SERVICE_ACCOUNT_KEY_JSON != ''
         working-directory: scripts
-        env:
-          GOOGLE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON }}
         run: node submit-google.js --sitemap ../frontend/sitemap.xml

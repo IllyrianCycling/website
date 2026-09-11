@@ -105,7 +105,7 @@ async function parseJsonResponse(response) {
     return null;
   }
 }
-// Email content builders
+// Contact form submission
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -115,6 +115,8 @@ if (contactForm) {
       name: formData.get('name')?.toString() || '',
       email: formData.get('email')?.toString() || '',
       level: formData.get('level')?.toString() || '',
+      format: formData.get('format')?.toString() || '',
+      delivery: formData.get('delivery')?.toString() || '',
       message: formData.get('message')?.toString() || '',
     };
 
