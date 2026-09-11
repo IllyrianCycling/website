@@ -308,7 +308,8 @@ html {
 section.why,
 section.blocks,
 section.delivery,
-section.routes {
+section.routes,
+section.testimonials {
   position: relative;
   z-index: 2;
   padding: 5rem 0;
@@ -318,6 +319,7 @@ section.why { background: rgba(10, 10, 10, 0.85); }
 section.blocks { background: rgba(17, 17, 17, 0.9); }
 section.delivery { background: rgba(17, 17, 17, 0.9); }
 section.routes { background: rgba(10, 10, 10, 0.85); }
+section.testimonials { background: rgba(10, 10, 10, 0.85); }
 
 h2 {
   font-family: var(--font-display);
@@ -549,6 +551,10 @@ h2 {
 .choose-grid .card .choose-core {
   border-left: none;
   padding-left: 0;
+}
+
+.choose-grid .card .cta {
+  align-self: center;
 }
 
 /* BESPOKE STRIP */
