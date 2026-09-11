@@ -23,7 +23,7 @@
   function cardHTML(it, active) {
     const m = it.metrics;
     return `
-      <article class="sg-card${active ? ' is-active' : ''}" data-id="${it.id}" role="button" tabindex="0" aria-pressed="${active}">
+      <article class="card sg-card${active ? ' is-active' : ''}" data-id="${it.id}" role="button" tabindex="0" aria-pressed="${active}">
         <div class="sg-card-head">
           <h3>${it.name}</h3>
           <p class="route-type">${it.tagline}</p>
