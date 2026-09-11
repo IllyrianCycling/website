@@ -1,5 +1,5 @@
 ﻿/*
- * Illyrian Cycling â€” Crawler & Technical SEO Audit
+ * Illyrian Cycling -- Crawler & Technical SEO Audit
  *
  * Recursively discovers internal routes from a base URL, verifies
  * metadata/structure/fallback content, and detects broken links.
@@ -57,7 +57,7 @@ async function fetchRobotsRules(base) {
       }
     }
   } catch {
-    /* robots.txt unavailable â€” do not restrict crawling */
+    /* robots.txt unavailable -- do not restrict crawling */
   }
   return rules;
 }
@@ -71,7 +71,7 @@ function robotsAllows(disallows, url) {
 async function checkExternal(url) {
   try {
     const res = await client.head(url, { validateStatus: () => true, timeout: 8000, maxRedirects: 3 });
-    // Some servers 405 HEAD â€” fall back to GET.
+    // Some servers 405 HEAD -- fall back to GET.
     if (res.status === 405) {
       const g = await client.get(url, { validateStatus: () => true, timeout: 8000, maxRedirects: 3 });
       return g.status;
@@ -205,8 +205,8 @@ async function crawl() {
       if (/^mailto:|^tel:|^javascript:/i.test(target.protocol)) return;
 
       if (sameHost(target.href, BASE)) {
-        if (target.hash && !target.pathname && !target.search) {
-          // Fragment-only anchor â€” confirm the target exists on this page.
+if (target.hash && !target.pathname && !target.search) {
+          // Fragment-only anchor - confirm the target exists on this page.
           const id = target.hash.slice(1);
           if (id && !$('#' + CSS.escape(id)).length) {
             report.brokenLinks.push({ url: normalize(pageUrl) + target.hash, status: 404, source: 'missing anchor' });
@@ -268,3 +268,4 @@ crawl().then((code) => {
   console.error('Crawler crashed:', err);
   process.exitCode = 2;
 });
+
