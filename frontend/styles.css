@@ -646,6 +646,10 @@ section.bespoke-section {
   background: var(--card-bg);
 }
 
+.method .method-line {
+  flex-basis: 100%;
+}
+
 /* SELF-GUIDED INTERACTIVE SYSTEM */
 .sg-formats {
   margin-top: 2rem;
