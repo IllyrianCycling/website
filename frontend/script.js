@@ -139,7 +139,7 @@ if (contactForm) {
         throw new Error(message);
       }
 
-      updateStatus('Thanks — we have your request and a confirmation email is on its way.');
+      updateStatus('Thanks - we have your request and a confirmation email is on its way.');
       contactForm.reset();
     } catch (error) {
       console.error('Contact form submit failed:', error);
