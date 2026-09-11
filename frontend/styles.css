@@ -656,9 +656,9 @@ h2 {
 
 /* SELF-GUIDED INTERACTIVE SYSTEM */
 .sg-formats {
-  margin-top: 4.5rem;
-  padding-top: 3.5rem;
-  border-top: 1px solid var(--card-border-strong);
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
 }
 
 .sg-format-grid {
