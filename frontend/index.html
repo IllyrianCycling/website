@@ -11,7 +11,81 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://illyriancycling.cc/">
   <meta property="og:image" content="https://illyriancycling.cc/images/logo.png">
-  <meta name="google-site-verification" content="YOUR_GOOGLE_CODE_HERE" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ILLYRIAN | PERFORMANCE CYCLING, MONTENEGRO">
+  <meta name="twitter:description" content="Guided camps or self-guided performance blocks. One methodology, engineered around Montenegro's terrain, load, recovery and progression.">
+  <meta name="twitter:image" content="https://illyriancycling.cc/images/logo.png">
+  <meta name="google-site-verification" content="Pb1WgFKkqMKCOa2r03iNASl7tKbTomQsPQfTUrc4Lwo" />
+  <link rel="canonical" href="https://illyriancycling.cc/" />
+
+  <!-- SEO JSON-LD START -->
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Illyrian Cycling",
+    "description": "Performance cycling in Montenegro. Guided camps or self-guided performance blocks, engineered around terrain, load, recovery and progression.",
+    "url": "https://illyriancycling.cc/",
+    "image": "https://illyriancycling.cc/images/logo.png",
+    "telephone": "+38268101978",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tivat",
+      "addressCountry": "ME"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.4361,
+      "longitude": 18.6961
+    },
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Illyrian Cycling Performance Blocks",
+    "description": "Guided camps or self-guided performance blocks. One methodology, engineered around Montenegro’s terrain, load, recovery and progression.",
+    "url": "https://illyriancycling.cc/#self-guided",
+    "image": "https://illyriancycling.cc/images/logo.png",
+    "brand": {
+      "@type": "Brand",
+      "name": "Illyrian Cycling"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR",
+      "offerCount": 3,
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "3 DAY — COAST TO MOUNTAIN",
+          "description": "A compact introduction to Montenegro’s coast-to-mountain terrain. Two loaded days with a scheduled recovery between them.",
+          "url": "https://illyriancycling.cc/#it-3day",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "5 DAY — THE PERFORMANCE BLOCK",
+          "description": "The core Illyrian self-guided block. A complete progression engineered around accumulated load, recovery and a defined peak.",
+          "url": "https://illyriancycling.cc/#it-5day",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "7 DAY — DEEP PROGRESSION",
+          "description": "A deeper performance progression with additional recovery and terrain variation. Designed for a longer accumulation of load.",
+          "url": "https://illyriancycling.cc/#it-7day",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  }
+]
+  </script>
+  <!-- SEO JSON-LD END -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -318,13 +392,16 @@
 
       <p class="block-label">PERFORMANCE BLOCKS &middot; SELECT A FORMAT</p>
       <div class="sg-format-grid" id="itinerary-cards">
-        <!-- Rendered from data/itineraries.js -->
+        <!-- Fallback text for crawlers/no-JS; replaced client-side by self-guided.js -->
+        <p class="sg-fallback">Self-guided performance blocks: 3 DAY — Coast to Mountain; 5 DAY — The Performance Block; 7 DAY — Deep Progression. Select a format to view its load model, itinerary and day-by-day architecture.</p>
       </div>
 
       <div class="block-architecture">
-        <p class="block-label" id="load-model-label"></p>
-        <div class="load-model-bar" id="load-model"></div>
-        <div class="timeline sg-timeline" id="progression-days"></div>
+        <p class="block-label" id="load-model-label">LOAD MODEL</p>
+        <div class="load-model-bar" id="load-model"><span class="sg-fallback">LOAD &middot; LOAD &middot; RECOVER &middot; LOAD &middot; PEAK</span></div>
+        <div class="timeline sg-timeline" id="progression-days">
+          <p class="sg-fallback">The featured 5 DAY block moves through load, load, recovery, load and peak. The schedule renders here once the page loads.</p>
+        </div>
       </div>
 
       <p class="sg-principle">THE SEQUENCE IS PART OF THE PRODUCT.</p>

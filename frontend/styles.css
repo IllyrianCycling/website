@@ -494,6 +494,16 @@ footer {
   border-radius: 3px;
 }
 
+/* SELF-GUIDED FALLBACK (no-JS) */
+.sg-fallback {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #aaaaaa);
+  line-height: 1.5;
+  margin: 0.5rem 0 1rem;
+}
+
 /* FLOATING ACTION STACK */
 .floating-actions {
   position: fixed;

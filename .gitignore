@@ -26,6 +26,11 @@ yarn-error.log*
 .env.local
 .env.*.local
 
+# SEO tooling secrets
+scripts/.env
+scripts/.env.*
+scripts/service-account-key.json
+
 # Editor directories and files
 .vscode/
 .idea/

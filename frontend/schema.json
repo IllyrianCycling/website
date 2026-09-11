@@ -1,0 +1,64 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Illyrian Cycling",
+    "description": "Performance cycling in Montenegro. Guided camps or self-guided performance blocks, engineered around terrain, load, recovery and progression.",
+    "url": "https://illyriancycling.cc/",
+    "image": "https://illyriancycling.cc/images/logo.png",
+    "telephone": "+38268101978",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tivat",
+      "addressCountry": "ME"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.4361,
+      "longitude": 18.6961
+    },
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Illyrian Cycling Performance Blocks",
+    "description": "Guided camps or self-guided performance blocks. One methodology, engineered around Montenegro’s terrain, load, recovery and progression.",
+    "url": "https://illyriancycling.cc/#self-guided",
+    "image": "https://illyriancycling.cc/images/logo.png",
+    "brand": {
+      "@type": "Brand",
+      "name": "Illyrian Cycling"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR",
+      "offerCount": 3,
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "3 DAY — COAST TO MOUNTAIN",
+          "description": "A compact introduction to Montenegro’s coast-to-mountain terrain. Two loaded days with a scheduled recovery between them.",
+          "url": "https://illyriancycling.cc/#it-3day",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "5 DAY — THE PERFORMANCE BLOCK",
+          "description": "The core Illyrian self-guided block. A complete progression engineered around accumulated load, recovery and a defined peak.",
+          "url": "https://illyriancycling.cc/#it-5day",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "7 DAY — DEEP PROGRESSION",
+          "description": "A deeper performance progression with additional recovery and terrain variation. Designed for a longer accumulation of load.",
+          "url": "https://illyriancycling.cc/#it-7day",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  }
+]
