@@ -544,44 +544,6 @@ h2 {
   flex-direction: column;
 }
 
-/* A DAY ON TOUR (compact) */
-.day-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.day-strip div {
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-top: 2px solid rgba(212, 120, 79, 0.4);
-  border-radius: 5px;
-}
-
-.day-strip .time {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-  letter-spacing: 0.05em;
-}
-
-.day-strip h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.day-strip p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
 /* BESPOKE STRIP */
 .bespoke {
   max-width: 720px;
@@ -591,10 +553,20 @@ h2 {
   padding-top: 3.5rem;
 }
 
+.bespoke-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
 .bespoke .choose-tag {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.22em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .bespoke h3 {
@@ -985,47 +957,13 @@ h2 {
 .vibe-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  font-weight: 600;
-  vertical-align: middle;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   padding: 2px 6px;
   background: var(--accent);
   color: #ffffff;
   margin-left: 10px;
   border-radius: 3px;
-}
-
-/* INFO STATS */
-.info-grid {
-  max-width: 960px;
-  margin: 0 auto 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.info-grid div {
-  padding: 2rem;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
-}
-
-.info-grid div:last-child { border-right: none; }
-
-.info-grid strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 0.4rem;
-  color: var(--text-primary);
-}
-
-.info-grid span {
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 /* TESTIMONIALS */
@@ -1340,8 +1278,7 @@ footer {
   }
 
   .choose-grid,
-  .sg-format-grid,
-  .day-strip {
+  .sg-format-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1349,11 +1286,6 @@ footer {
     padding: 0.85rem 1.75rem;
     width: 100%;
     max-width: 320px;
-  }
-
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
   }
 
   .route-card {
@@ -1450,11 +1382,6 @@ footer {
     left: -1.65rem;
     width: 8px;
     height: 8px;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .floating-actions {
