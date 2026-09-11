@@ -462,13 +462,6 @@ h2 {
 }
 
 /* 03 DURATION BLOCKS */
-.blocks-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1120px;
-  margin: 0 auto;
-}
 
 /* CARD COMPONENTS (tag / sub / desc / items / core) */
 .choose-tag {
@@ -666,34 +659,6 @@ h2 {
   margin-top: 4.5rem;
   padding-top: 3.5rem;
   border-top: 1px solid var(--card-border-strong);
-}
-
-.sg-components {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin: 3rem 0;
-}
-
-.sg-components div {
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 5px;
-}
-
-.sg-components h4 {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-.sg-components p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.55;
 }
 
 .sg-format-grid {
@@ -1314,9 +1279,7 @@ footer {
 @media (max-width: 1024px) {
   .why-grid,
   .route-grid,
-  .blocks-grid,
-  .sg-format-grid,
-  .sg-components {
+  .sg-format-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1376,10 +1339,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .blocks-grid,
   .choose-grid,
   .sg-format-grid,
-  .sg-components,
   .day-strip {
     grid-template-columns: 1fr;
   }
