@@ -217,3 +217,14 @@ if (musicToggle) {
     }
   });
 }
+
+const bgVideo = document.querySelector('.bg-video');
+
+if (bgVideo && bgVideo.paused) {
+  bgVideo.play().catch(() => {
+    const resyncVideo = () => bgVideo.play().catch(() => {});
+    ['click', 'keydown', 'touchstart', 'scroll'].forEach((evt) => {
+      window.addEventListener(evt, resyncVideo, { once: true, passive: true });
+    });
+  });
+}
