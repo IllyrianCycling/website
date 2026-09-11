@@ -625,6 +625,26 @@ section.bespoke-section {
   margin-bottom: 1.75rem;
 }
 
+.illyrian-bespoke {
+  margin-top: 2rem;
+}
+
+.illyrian-bespoke h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.illyrian-bespoke p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
 .method {
   display: flex;
   justify-content: center;
