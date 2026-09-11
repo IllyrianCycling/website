@@ -1404,7 +1404,9 @@ html {
   scroll-behavior: smooth;
 }
 
-#choose,
+#blocks,
+#delivery,
+#bespoke,
 #guided,
 #self-guided,
 #about,
@@ -1413,12 +1415,16 @@ html {
 }
 
 /* SECTION BACKGROUNDS (UNIFIED ORDER) */
+section.blocks { background: rgba(17, 17, 17, 0.9); }
 section.choose { background: rgba(17, 17, 17, 0.9); }
+section.bespoke-section { background: rgba(10, 10, 10, 0.85); }
 section.guided { background: rgba(10, 10, 10, 0.85); }
 section.sg-formats { background: rgba(17, 17, 17, 0.9); }
 section.testimonials { background: rgba(17, 17, 17, 0.9); }
 
+section.blocks,
 section.choose,
+section.bespoke-section,
 section.guided {
   position: relative;
   z-index: 2;
@@ -1569,6 +1575,59 @@ section.guided {
   align-self: flex-start;
 }
 
+/* 03 PERFORMANCE BLOCKS */
+.blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1120px;
+  margin: 2rem auto 0;
+}
+
+.blocks-modes {
+  margin: 3.5rem auto 0;
+}
+
+section.bespoke-section .bespoke {
+  margin-top: 0;
+}
+
+.bespoke .bespoke-principle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+}
+
+/* SCHEDULED CAMPS */
+.scheduled-camps {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.scheduled-camps .sg-camp-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.scheduled-camps p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.scheduled-camps .method {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
 /* 04 BESPOKE STRIP */
 .bespoke {
   max-width: 720px;
@@ -1697,6 +1756,7 @@ section.guided {
     transform: none;
   }
 
+  .blocks-grid,
   .sg-format-grid,
   .deliverables-grid,
   .journey-grid {
@@ -1748,7 +1808,9 @@ section.guided {
   section.journey,
   section.suitability,
   section.compare,
+  section.blocks,
   section.choose,
+  section.bespoke-section,
   section.guided {
     padding: 3.5rem 0;
   }
@@ -1824,7 +1886,8 @@ section.guided {
     border-right: none;
   }
 
-  .choose-grid {
+  .choose-grid,
+  .blocks-grid {
     grid-template-columns: 1fr;
   }
 

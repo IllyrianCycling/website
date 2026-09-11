@@ -123,7 +123,7 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
 }
 
-function buildClientEmail({ name, level }) {
+function buildClientEmail({ name, level, format, delivery }) {
   return {
     subject: `Thanks for reaching out to ${SITE_NAME}`,
     html: `
@@ -131,6 +131,8 @@ function buildClientEmail({ name, level }) {
         <h1 style="margin-bottom: 0.5rem;">Thank you, ${escapeHtml(name)}.</h1>
         <p>We received your request and will be in touch soon with a tailored cycling experience.</p>
         <p><strong>Level:</strong> ${escapeHtml(level) || 'Not specified'}</p>
+        <p><strong>Block:</strong> ${escapeHtml(format) || 'Not specified'}</p>
+        <p><strong>Delivery:</strong> ${escapeHtml(delivery) || 'Not specified'}</p>
         <p>Expect a reply within 24 hours.</p>
         <p>Ride safe,<br><strong>${SITE_NAME}</strong></p>
       </div>
@@ -138,7 +140,7 @@ function buildClientEmail({ name, level }) {
   };
 }
 
-function buildAdminEmail({ name, email, level, message }) {
+function buildAdminEmail({ name, email, level, format, delivery, message }) {
   return {
     subject: `New inquiry from ${escapeHtml(name)}`,
     html: `
@@ -147,6 +149,8 @@ function buildAdminEmail({ name, email, level, message }) {
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Level:</strong> ${escapeHtml(level) || 'Not specified'}</p>
+        <p><strong>Block:</strong> ${escapeHtml(format) || 'Not specified'}</p>
+        <p><strong>Delivery:</strong> ${escapeHtml(delivery) || 'Not specified'}</p>
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${escapeHtml(message) || 'No message provided.'}</p>
       </div>
@@ -158,6 +162,8 @@ app.post('/api/contact', async (req, res) => {
   const name = sanitize(req.body.name);
   const email = sanitize(req.body.email);
   const level = sanitize(req.body.level);
+  const format = sanitize(req.body.format);
+  const delivery = sanitize(req.body.delivery);
   const message = sanitize(req.body.message);
 
   if (!name || !email) {
@@ -168,13 +174,13 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ error: 'Invalid email address.' });
   }
 
-  if (name.length > 100 || level.length > 50 || message.length > 2000) {
+  if (name.length > 100 || level.length > 50 || format.length > 50 || delivery.length > 50 || message.length > 2000) {
     return res.status(400).json({ error: 'Input fields exceed maximum allowed length.' });
   }
 
   try {
-    const clientEmail = buildClientEmail({ name, level });
-    const adminEmail = buildAdminEmail({ name, email, level, message });
+    const clientEmail = buildClientEmail({ name, level, format, delivery });
+    const adminEmail = buildAdminEmail({ name, email, level, format, delivery, message });
 
     await Promise.all([
       resend.emails.send({
