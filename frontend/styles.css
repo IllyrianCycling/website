@@ -659,15 +659,33 @@ section.bespoke-section {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid #333333;
   padding: 0.5rem 1.1rem;
-  border-radius: 3px;
-  background: var(--card-bg);
+  border-radius: 4px;
+  background: rgba(10, 10, 10, 0.8);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.method span:hover {
+  border-color: var(--accent);
+  background: rgba(212, 120, 79, 0.15);
 }
 
 .method .method-line {
   flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid #2A2A2A;
+  padding: 0.5rem 1.1rem;
+  border-radius: 4px;
+  background: rgba(10, 10, 10, 0.8);
+  width: 100%;
+  text-align: center;
 }
 
 /* SELF-GUIDED INTERACTIVE SYSTEM */
