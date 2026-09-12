@@ -148,6 +148,37 @@ if (contactForm) {
   });
 }
 
+// Wire section CTA buttons to pre-select form options before scrolling to contact.
+const formatSelect = document.getElementById('format');
+const deliverySelect = document.getElementById('delivery-mode');
+
+const DURATION_OPTIONS = {
+  'it-3day': '3 day',
+  'it-5day': '5 day',
+  'it-7day': '7 day',
+};
+
+document.addEventListener('click', (e) => {
+  const cta = e.target.closest('a[data-delivery], a[data-reactive-format]');
+  if (!cta) return;
+
+  if (formatSelect && cta.dataset.reactiveFormat !== undefined) {
+    const source = cta.closest('.bespoke-section')
+      ? document.querySelector('.bespoke-duration-btn.is-selected')
+      : document.querySelector('.sg-card.is-active');
+    const duration = source && DURATION_OPTIONS[source.dataset.id];
+    if (duration) formatSelect.value = duration;
+  }
+
+  if (formatSelect && cta.dataset.format) {
+    formatSelect.value = cta.dataset.format;
+  }
+
+  if (deliverySelect && cta.dataset.delivery) {
+    deliverySelect.value = cta.dataset.delivery;
+  }
+});
+
 // Music toggle
 const musicToggle = document.getElementById('music-toggle');
 const musicSources = [

@@ -62,7 +62,7 @@
         {
           "@type": "Offer",
           "name": "3 DAY - COAST TO MOUNTAIN",
-          "description": "A compact introduction to Montenegro’s coast-to-mountain terrain. Two loaded days with a scheduled recovery between them.",
+          "description": "A compact introduction to Montenegro’s coast-to-mountain terrain. Three consecutive riding days with no scheduled recovery.",
           "url": "https://illyriancycling.cc/#it-3day",
           "availability": "https://schema.org/InStock"
         },
@@ -113,6 +113,7 @@
       <a href="#self-guided">SELF-GUIDED</a>
       <a href="#contact">CONTACT</a>
     </nav>
+    <a href="#contact" class="nav-cta cta">ENQUIRE</a>
   </header>
 
   <!-- 01 HERO -->
@@ -132,7 +133,7 @@
         </span>
       </div>
       <div class="hero-cta-group">
-        <a href="#blocks" class="cta">CHOOSE YOUR PERFORMANCE</a>
+        <a href="#contact" class="cta" data-delivery="unsure" data-format="flexible">CHOOSE YOUR PERFORMANCE</a>
       </div>
     </div>
   </section>
@@ -237,24 +238,42 @@
     </div>
   </section>
 
+  <!-- 03b PRESS -->
+  <section class="press-banner" aria-label="Media Recognition">
+    <div class="container">
+      <div class="press-content">
+        <span class="press-label">ROAD.CC</span>
+        <a href="https://road.cc/content/blog/montenegro-cycling-287589" target="_blank" rel="noopener" class="press-link">
+          <img src="images/ROADCC.jpg" alt="Road.cc Logo" width="60" height="60" loading="lazy">
+          <span class="press-quote">&ldquo;Montenegro offers sheer variety of terrain unlike anywhere else in Europe.&rdquo;</span>
+          <span class="press-source">Geoff Harper</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 04 BESPOKE -->
   <section class="bespoke-section" aria-labelledby="bespoke-title">
     <div class="container">
       <p class="bespoke-title" id="bespoke-title">BESPOKE</p>
       <p class="choose-tag">ILLYRIAN BUILDS PROGRAMMES</p>
       <h3>A Private Performance Block</h3>
-      <p>The same Illyrian performance architecture, built around you. Choose 03, 05 or 07 days - we calibrate the routes, terrain, load, recovery and support around your objectives, riding level and group.</p>
-      <p>Bespoke is not a separate product tier. It is how we build the programme - any block can be bespoke, guided or self-guided.</p>
+      <p>Illyrian performance architecture, built around you. Choose 03, 05 or 07 days, and we calibrate the routes, terrain, accumulated load, recovery and support around your objectives, riding level, available time and group.<br>The result is a coherent performance programme, designed to deliver the right level of challenge, progression and recovery.</p>
+      <div class="bespoke-duration" id="bespoke-duration" role="group" aria-label="Choose your block duration">
+        <button type="button" class="bespoke-duration-btn" data-id="it-3day" aria-pressed="false">03 DAYS</button>
+        <button type="button" class="bespoke-duration-btn is-selected" data-id="it-5day" aria-pressed="true">05 DAYS</button>
+        <button type="button" class="bespoke-duration-btn" data-id="it-7day" aria-pressed="false">07 DAYS</button>
+      </div>
+      <div class="bespoke-preview">
+        <p class="bespoke-preview-tagline">THE PERFORMANCE BLOCK</p>
+        <div class="bespoke-load-model" id="bespoke-load-model" aria-live="polite"></div>
+      </div>
       <div class="method">
-        <span>03 / 05 / 07 DAYS</span>
-        <span>GUIDED</span>
-        <span>SELF-GUIDED</span>
-        <span class="method-line">PRIVATE GROUPS</span>
-        <span class="method-line">COUPLES</span>
-        <span class="method-line">INDIVIDUALS</span>
+        <p class="method-line"><span class="method-values">GUIDED / SELF-GUIDED</span></p>
+        <p class="method-line"><span class="method-values">GROUPS / COUPLES / INDIVIDUALS</span></p>
       </div>
       <p class="bespoke-principle">YOU CHOOSE THE DURATION. WE BUILD THE PROGRAMME AROUND IT.</p>
-      <a href="#contact" class="cta">DESIGN YOUR BLOCK</a>
+      <a href="#contact" class="cta" data-delivery="bespoke" data-reactive-format>DESIGN YOUR BLOCK</a>
     </div>
   </section>
 
@@ -279,7 +298,7 @@
         </div>
       </div>
       <div class="sg-home-cta">
-        <a href="#contact" class="cta">START YOUR BLOCK</a>
+        <a href="#contact" class="cta" data-delivery="self-guided" data-reactive-format>START YOUR BLOCK</a>
       </div>
     </div>
   </section>
@@ -309,7 +328,7 @@
             <p>Door-to-door from Tivat or Podgorica. Premium stays with secure bike storage.</p>
           </div>
           <p class="choose-core">Illyrian controls the execution.</p>
-          <a href="#contact" class="cta">ENQUIRE GUIDED</a>
+          <a href="#contact" class="cta" data-delivery="guided">ENQUIRE GUIDED</a>
         </article>
 
         <article class="card">
@@ -422,6 +441,7 @@
   </div>
 
   <script src="data/itineraries.js" defer></script>
+  <script src="bespoke.js" defer></script>
   <script src="self-guided.js" defer></script>
   <script src="script.js" defer></script>
 </body>

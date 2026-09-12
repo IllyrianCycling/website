@@ -13,11 +13,11 @@ window.ILLYRIAN.itineraries = [
     name: '3 DAY',
     tagline: 'COAST TO MOUNTAIN',
     summary:
-      'A compact introduction to Montenegro\u2019s coast-to-mountain terrain. Two loaded days with a scheduled recovery between them.',
+      'A compact introduction to Montenegro\u2019s coast-to-mountain terrain. Three consecutive riding days with no scheduled recovery.',
     metrics: {
       duration: '3 days',
-      ridingDays: '2',
-      recoveryDays: '1',
+      ridingDays: '3',
+      recoveryDays: '0',
       distance: '\u2014',
       elevation: '\u2014',
       maxElevation: '1,670m',
@@ -29,7 +29,7 @@ window.ILLYRIAN.itineraries = [
       accommodation: 'Premium \u00B7 Hand-selected',
       price: null
     },
-    loadModel: ['LOAD', 'RECOVER', 'PEAK'],
+    loadModel: ['LOAD', 'LOAD', 'PEAK'],
     days: [
       {
         day: '01',
@@ -41,11 +41,11 @@ window.ILLYRIAN.itineraries = [
       },
       {
         day: '02',
-        name: 'RECOVERY',
+        name: 'MOUNTAIN LOAD',
         distance: '\u2014',
         elevation: '\u2014',
-        load: 'LOW',
-        purpose: 'Absorb the opening load before the final objective.'
+        load: 'HIGH',
+        purpose: 'First climbing stimulus out of the coast.'
       },
       {
         day: '03',

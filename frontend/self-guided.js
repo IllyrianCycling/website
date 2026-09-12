@@ -39,7 +39,7 @@
         </div>
         <div class="sg-card-foot">
           <span class="sg-price">${priceLabel(m.price)}</span>
-          <a href="#contact" class="sg-enquire">ENQUIRE</a>
+          <a href="#contact" class="sg-enquire" data-delivery="self-guided" data-reactive-format>ENQUIRE</a>
         </div>
       </article>
     `;
