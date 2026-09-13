@@ -1432,6 +1432,36 @@ footer {
 
 /* 768px and below */
 @media (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile (html + body must both clip for
+     Android/Chrome; some complex elements exceed the viewport otherwise). */
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Clip absolutely-positioned decorative children (e.g. the 760px bespoke
+     glow) so they can never extend the scrollable area. */
+  section {
+    overflow: hidden;
+  }
+
+  /* Grid items default to min-width:auto which lets intrinsic content
+     (long mono labels, badges) push 1fr columns beyond the viewport. */
+  .why-grid > *,
+  .route-grid > *,
+  .sg-format-grid > *,
+  .testimonial-grid > *,
+  .choose-grid > *,
+  .sg-metrics > *,
+  .route-stats > *,
+  .bespoke-duration,
+  .contact-form > * {
+    min-width: 0;
+  }
+
   .container {
     padding: 0 1.5rem;
   }
