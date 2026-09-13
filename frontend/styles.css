@@ -1433,6 +1433,11 @@ footer {
 
   .hero-inner {
     padding: 0 1.5rem;
+    transform: translateY(-50px);
+  }
+
+  .hero-cta-group {
+    bottom: calc(3.5rem + 50px);
   }
 
   .nav {
@@ -1479,13 +1484,14 @@ footer {
   }
 
   .cta {
-    padding: 0.85rem 1.75rem;
+    font-size: 0.68rem;
+    padding: 0.68rem 1.4rem;
     /* Narrow mobile cap for every page CTA (nav CONTACT is exempt via
-       .nav .nav-cta -> width:auto). 240px keeps the pill clear of the
+       .nav .nav-cta -> width:auto). 192px keeps the pill clear of the
        floating chat/music stack (44px + 0.75rem offset on the right)
        even on 320px-wide screens. */
     width: 100%;
-    max-width: 240px;
+    max-width: 192px;
   }
 
   .route-card {
