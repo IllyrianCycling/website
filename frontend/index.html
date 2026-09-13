@@ -108,12 +108,10 @@
     </a>
     <span class="nav-brand">ILLYRIAN</span>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#blocks">BLOCKS</a>
+      <a href="#bespoke">BESPOKE</a>
       <a href="#guided">GUIDED</a>
-      <a href="#self-guided">SELF-GUIDED</a>
-      <a href="#contact">CONTACT</a>
     </nav>
-    <a href="#contact" class="nav-cta cta">ENQUIRE</a>
+    <a href="#contact" class="nav-cta cta">CONTACT</a>
   </header>
 
   <!-- 01 HERO -->
@@ -133,7 +131,7 @@
         </span>
       </div>
       <div class="hero-cta-group">
-        <a href="#contact" class="cta" data-delivery="unsure" data-format="flexible">CHOOSE YOUR PERFORMANCE</a>
+        <a href="#bespoke" class="cta" data-delivery="bespoke" data-format="flexible">CHOOSE YOUR PERFORMANCE</a>
       </div>
     </div>
   </section>
@@ -255,7 +253,7 @@
   </section>
 
   <!-- 04 BESPOKE -->
-  <section class="bespoke-section" aria-labelledby="bespoke-title">
+  <section class="bespoke-section" id="bespoke" aria-labelledby="bespoke-title">
     <div class="container">
       <p class="bespoke-title" id="bespoke-title">BESPOKE</p>
       <p class="choose-tag">ILLYRIAN BUILDS PROGRAMMES</p>
@@ -270,6 +268,10 @@
         <p class="bespoke-preview-tagline">THE PERFORMANCE BLOCK</p>
         <div class="bespoke-load-model" id="bespoke-load-model" aria-live="polite"></div>
       </div>
+      <p class="bespoke-timeline-label">DAY-BY-DAY PROGRESSION</p>
+      <div class="timeline sg-timeline bespoke-days" id="bespoke-days">
+        <p class="sg-fallback">The day-by-day progression renders here for the duration you select.</p>
+      </div>
       <div class="method">
         <p class="method-line"><span class="method-values">GUIDED / SELF-GUIDED</span></p>
         <p class="method-line"><span class="method-values">GROUPS / COUPLES / INDIVIDUALS</span></p>
@@ -279,36 +281,10 @@
     </div>
   </section>
 
-  <!-- 05 PERFORMANCE BLOCKS -->
-  <section class="blocks" id="blocks" aria-labelledby="blocks-heading">
-    <div class="container">
-      <p class="block-label">3 / 5 / 7 DAY &middot; THREE DURATIONS OF ONE ARCHITECTURE</p>
-      <h2 id="blocks-heading">Illyrian Performance Blocks</h2>
-      <p class="section-intro">Illyrian programmes are built as performance blocks, not generic cycling holidays. Select a format to view its load model and day-by-day progression.</p>
-    </div>
-    <div class="container sg-formats" id="self-guided">
-      <p class="block-label">SELECT A FORMAT &middot; 03 / 05 / 07</p>
-      <div class="sg-format-grid" id="itinerary-cards">
-        <!-- Fallback text for crawlers/no-JS; replaced client-side by self-guided.js -->
-        <p class="sg-fallback">Self-guided performance blocks: 3 DAY - Coast to Mountain; 5 DAY - The Performance Block; 7 DAY - Deep Progression. Select a format to view its load model, itinerary and day-by-day architecture.</p>
-      </div>
-      <div class="block-architecture">
-        <p class="block-label" id="load-model-label">LOAD MODEL</p>
-        <div class="load-model-bar" id="load-model"><span class="sg-fallback">LOAD &middot; LOAD &middot; RECOVER &middot; LOAD &middot; PEAK</span></div>
-        <div class="timeline sg-timeline" id="progression-days">
-          <p class="sg-fallback">The featured 5 DAY block moves through load, load, recovery, load and peak. The schedule renders here once the page loads.</p>
-        </div>
-      </div>
-      <div class="sg-home-cta">
-        <a href="#contact" class="cta" data-delivery="self-guided" data-reactive-format>START YOUR BLOCK</a>
-      </div>
-    </div>
-  </section>
-
   <!-- 06 DELIVERY MODEL -->
   <section class="delivery" id="delivery" aria-labelledby="delivery-heading">
     <div class="container">
-      <p class="block-label">DELIVERY MODEL &middot; HOW YOU RIDE IT</p>
+      <p class="block-label">DELIVERY MODEL &middot; HOW YOU RIDE</p>
       <h2 id="delivery-heading">How You Ride It</h2>
       <p class="choose-relationship">SAME TERRAIN &middot; SAME METHODOLOGY &middot; DIFFERENT LEVEL OF INVOLVEMENT</p>
 
@@ -346,7 +322,7 @@
             <p>03 / 05 / 07 day blocks. One architecture.</p>
           </div>
           <p class="choose-core">Illyrian controls the architecture.<br>The rider controls the execution.</p>
-          <a href="#self-guided" class="cta">EXPLORE FORMATS</a>
+          <a href="#bespoke" class="cta" data-delivery="self-guided" data-format="flexible">EXPLORE FORMATS</a>
         </article>
       </div>
     </div>
@@ -444,7 +420,6 @@
 
   <script src="data/itineraries.js" defer></script>
   <script src="bespoke.js" defer></script>
-  <script src="self-guided.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

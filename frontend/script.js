@@ -163,9 +163,7 @@ document.addEventListener('click', (e) => {
   if (!cta) return;
 
   if (formatSelect && cta.dataset.reactiveFormat !== undefined) {
-    const source = cta.closest('.bespoke-section')
-      ? document.querySelector('.bespoke-duration-btn.is-selected')
-      : document.querySelector('.sg-card.is-active');
+    const source = document.querySelector('.bespoke-duration-btn.is-selected');
     const duration = source && DURATION_OPTIONS[source.dataset.id];
     if (duration) formatSelect.value = duration;
   }
