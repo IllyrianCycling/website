@@ -254,10 +254,13 @@ a {
 }
 
 .hero-cta-group {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2.5rem;
 }
 
 /* CTA */
@@ -1453,10 +1456,7 @@ footer {
   }
 
   .nav .nav-cta {
-    margin-left: auto;
-    width: auto;
-    max-width: none;
-    padding: 0.45rem 1.1rem;
+    display: none;
   }
 
   .hero-meta {
