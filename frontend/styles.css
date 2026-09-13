@@ -1480,18 +1480,19 @@ footer {
 
   .cta {
     padding: 0.85rem 1.75rem;
-    /* Uniform mobile cap for every page CTA (nav CONTACT is exempt via
-       .nav .nav-cta -> width:auto). Fills its container up to 280px so the
-       pill stays clear of the floating chat/music stack on the right. */
+    /* Narrow mobile cap for every page CTA (nav CONTACT is exempt via
+       .nav .nav-cta -> width:auto). 240px keeps the pill clear of the
+       floating chat/music stack (44px + 0.75rem offset on the right)
+       even on 320px-wide screens. */
     width: 100%;
-    max-width: 280px;
+    max-width: 240px;
   }
 
   .route-card {
     padding: 1.5rem;
   }
 
-  /* Let the card CTAs reach the same 280px cap as the other buttons by
+  /* Let the card CTAs reach the same 240px cap as the other buttons by
      trimming the default 2.25rem card padding on narrow screens. */
   .choose-grid .card {
     padding: 1.5rem;
