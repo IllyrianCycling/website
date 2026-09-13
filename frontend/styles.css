@@ -134,10 +134,10 @@ a {
 
 .nav .nav-cta {
   margin-left: 1.5rem;
-  padding: 0.4rem 1.2rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  transform: translateX(0);
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   background: rgba(212, 120, 79, 0.35);
 }
 
@@ -260,15 +260,9 @@ a {
   margin-top: 2.5rem;
 }
 
-.hero .cta {
-  padding: 0.6rem 1.5rem;
-  font-size: 0.7rem;
-}
-
 /* CTA */
 .cta {
   display: inline-block;
-  transform: translateX(-4px);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 500;
@@ -711,11 +705,8 @@ section.bespoke-section::before {
 }
 
 .bespoke-section .cta {
-  padding: 1.1rem 3rem;
-  font-size: 0.95rem;
   background: rgba(212, 120, 79, 0.42);
   border-color: var(--accent);
-  transform: none;
   box-shadow: 0 6px 24px rgba(212, 120, 79, 0.18);
 }
 
@@ -1283,10 +1274,7 @@ section.bespoke-section::before {
 
 .contact-form .cta {
   cursor: pointer;
-  border: none;
   margin-top: 1rem;
-  font-family: var(--font-display);
-  letter-spacing: 1px;
   width: 100%;
   justify-self: center;
 }
@@ -1412,11 +1400,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-cta-group .cta {
-    transform: none;
-  }
-}
-
 /* 768px and below */
 @media (max-width: 768px) {
   /* Prevent horizontal overflow on mobile (html + body must both clip for
@@ -1490,8 +1473,8 @@ footer {
   .nav .nav-cta {
     margin-left: auto;
     width: auto;
+    max-width: none;
     padding: 0.45rem 1.1rem;
-    font-size: 0.65rem;
   }
 
   .hero-meta {
