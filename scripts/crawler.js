@@ -180,13 +180,11 @@ async function crawl() {
     }).length;
     if (svgNoLabel) warnings.push(`${svgNoLabel} <svg> without accessible label`);
 
-    // JS-rendered fallback audit
-    const cardsText = $('#itinerary-cards').text().trim();
-    const daysText = $('#progression-days').text().trim();
-    const loadModelText = $('#load-model').text().trim();
-    if (cardsText.length < 30) issues.push('no readable fallback text in #itinerary-cards');
-    if (daysText.length < 20) issues.push('no readable fallback text in #progression-days');
-    if (loadModelText.length < 5) warnings.push('#load-model has no fallback content');
+// JS-rendered fallback audit
+    const daysText = $('#bespoke-days').text().trim();
+    const loadModelText = $('#bespoke-load-model').text().trim();
+    if (daysText.length < 20) issues.push('no readable fallback text in #bespoke-days');
+    if (loadModelText.length < 5) warnings.push('#bespoke-load-model has no fallback content');
 
     report.routes.push(pageMeta);
 
@@ -225,8 +223,8 @@ if (target.hash && !target.pathname && !target.search) {
       }
     });
 
-    // Audit same-page anchor links for homepage sections referenced by nav.
-    ['guided', 'self-guided', 'about', 'contact', 'choose'].forEach((id) => {
+// Audit same-page anchor links for homepage sections referenced by nav.
+    ['bespoke', 'delivery', 'guided', 'testimonials', 'about', 'routes', 'contact'].forEach((id) => {
       if (!$('#' + id).length) report.brokenLinks.push({ url: normalize(pageUrl) + '#' + id, status: 404, source: 'missing section anchor' });
     });
   }
