@@ -416,7 +416,6 @@ h2 {
   height: 40px;
   margin-bottom: 1.25rem;
   color: var(--accent);
-  animation: icon-fade 16s infinite;
 }
 
 .why-grid .icon-coast {
@@ -429,23 +428,6 @@ h2 {
 .why-grid .icon svg {
   width: 100%;
   height: 100%;
-}
-
-.why-grid article:nth-child(1) .icon { animation-delay: 0s; }
-.why-grid article:nth-child(2) .icon { animation-delay: 4s; }
-.why-grid article:nth-child(3) .icon { animation-delay: 8s; }
-.why-grid article:nth-child(4) .icon { animation-delay: 12s; }
-
-@keyframes icon-fade {
-  0%, 3% { opacity: 0; }
-  3.5%, 6% { opacity: 1; }
-  6.5%, 9% { opacity: 0; }
-  9.5%, 12.5% { opacity: 1; }
-  13%, 15.5% { opacity: 0; }
-  16%, 19% { opacity: 1; }
-  19.5%, 22% { opacity: 0; }
-  22.5%, 25% { opacity: 1; }
-  26%, 100% { opacity: 1; }
 }
 
 .why-grid h3 {
@@ -1498,11 +1480,20 @@ footer {
 
   .cta {
     padding: 0.85rem 1.75rem;
+    /* Uniform mobile cap for every page CTA (nav CONTACT is exempt via
+       .nav .nav-cta -> width:auto). Fills its container up to 280px so the
+       pill stays clear of the floating chat/music stack on the right. */
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
   }
 
   .route-card {
+    padding: 1.5rem;
+  }
+
+  /* Let the card CTAs reach the same 280px cap as the other buttons by
+     trimming the default 2.25rem card padding on narrow screens. */
+  .choose-grid .card {
     padding: 1.5rem;
   }
 
@@ -1541,6 +1532,12 @@ footer {
 
   .contact-form .cta {
     margin-top: 0.5rem;
+  }
+
+  /* Extra bottom clearance so the submit button clears the fixed
+     WhatsApp/music stack (44px x2 + gap + 0.75rem offset) at full scroll. */
+  .rides {
+    padding-bottom: 7.5rem;
   }
 
   .press-banner {
