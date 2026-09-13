@@ -294,17 +294,10 @@ a {
 /* SECTIONS */
 html {
   scroll-behavior: smooth;
-}
-
-#blocks,
-#delivery,
-#guided,
-#self-guided,
-#about,
-#routes,
-#bespoke,
-#contact {
-  scroll-margin-top: 90px;
+  /* Fixed nav is 110px tall. 130px = nav height + 20px breathing room so
+     anchored section tops clear the header (works for any [id], incl.
+     dynamically rendered itinerary blocks). */
+  scroll-padding-top: 130px;
 }
 
 .container {
@@ -1430,6 +1423,9 @@ footer {
      Android/Chrome; some complex elements exceed the viewport otherwise). */
   html {
     overflow-x: hidden;
+    /* .nav is position: static here (not fixed), so no header offset is
+       needed; keep a small breathing gap above anchored targets. */
+    scroll-padding-top: 0.75rem;
   }
 
   body {
