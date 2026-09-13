@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: illyrian-cycling-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: RESEND_API_KEY
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: FROM_EMAIL
+        sync: false
+      - key: SITE_NAME
+        value: Illyrian Cycling
+
+  - type: web
+    name: illyrian-cycling-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: ""
+    staticPublishPath: .
+    autoDeploy: true

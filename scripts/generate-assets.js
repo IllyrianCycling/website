@@ -43,17 +43,12 @@ function xmlEscape(value) {
     .replace(/"/g, '&quot;');
 }
 
-function buildSitemap(itineraries) {
+function buildSitemap() {
   const head = '<?xml version="1.0" encoding="UTF-8"?>\n';
   const root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   const tail = '</urlset>\n';
   const home = `  <url>\n    <loc>${HOME}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
-  const sections = itineraries
-    .map(
-      (it) => `  <url>\n    <loc>${xmlEscape(HOME + '#it-' + it.id)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`
-    )
-    .join('');
-  return head + root + home + sections + tail;
+  return head + root + home + tail;
 }
 
 function buildRobots() {
@@ -76,7 +71,7 @@ function buildSchema(itineraries) {
     '@type': 'SportsActivityLocation',
     name: 'Illyrian Cycling',
     description:
-      'Performance cycling in Montenegro. Guided camps or self-guided performance blocks, engineered around terrain, load, recovery and progression.',
+      'Performance cycling in Montenegro. Guided or self-guided performance blocks, engineered around terrain, load, recovery and progression.',
     url: HOME,
     image: HOME + 'images/logo.png',
     telephone: '+38268101978',
@@ -91,14 +86,13 @@ function buildSchema(itineraries) {
       latitude: 42.4361,
       longitude: 18.6961,
     },
-    sameAs: [],
   });
 
   const product = Object.assign({}, base, {
     '@type': 'Product',
     name: 'Illyrian Cycling Performance Blocks',
     description:
-      'Guided camps or self-guided performance blocks. One methodology, engineered around Montenegro\u2019s terrain, load, recovery and progression.',
+      'Guided or self-guided performance blocks. One methodology, engineered around Montenegro\u2019s terrain, load, recovery and progression.',
     url: HOME + '#self-guided',
     image: HOME + 'images/logo.png',
     brand: { '@type': 'Brand', name: 'Illyrian Cycling' },
@@ -147,7 +141,7 @@ function injectInline(schema, indexPath) {
 function main() {
   const itineraries = loadItineraries();
 
-  fs.writeFileSync(path.join(FRONTEND, 'sitemap.xml'), buildSitemap(itineraries), 'utf8');
+  fs.writeFileSync(path.join(FRONTEND, 'sitemap.xml'), buildSitemap(), 'utf8');
   fs.writeFileSync(path.join(FRONTEND, 'robots.txt'), buildRobots(), 'utf8');
   const schema = buildSchema(itineraries);
 
@@ -155,7 +149,7 @@ function main() {
     injectInline(schema, arg('--index', null));
   }
 
-  console.log('sitemap.xml entries:', itineraries.length + 1);
+  console.log('sitemap.xml entries: 1');
   console.log('robots.txt written');
   console.log('schema.json written (' + schema.length + ' @type nodes)');
 }

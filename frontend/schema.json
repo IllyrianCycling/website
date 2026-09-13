@@ -3,7 +3,7 @@
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
     "name": "Illyrian Cycling",
-    "description": "Performance cycling in Montenegro. Guided camps or self-guided performance blocks, engineered around terrain, load, recovery and progression.",
+    "description": "Performance cycling in Montenegro. Guided or self-guided performance blocks, engineered around terrain, load, recovery and progression.",
     "url": "https://illyriancycling.cc/",
     "image": "https://illyriancycling.cc/images/logo.png",
     "telephone": "+38268101978",
@@ -17,14 +17,13 @@
       "@type": "GeoCoordinates",
       "latitude": 42.4361,
       "longitude": 18.6961
-    },
-    "sameAs": []
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Illyrian Cycling Performance Blocks",
-    "description": "Guided camps or self-guided performance blocks. One methodology, engineered around Montenegro’s terrain, load, recovery and progression.",
+    "description": "Guided or self-guided performance blocks. One methodology, engineered around Montenegro’s terrain, load, recovery and progression.",
     "url": "https://illyriancycling.cc/#self-guided",
     "image": "https://illyriancycling.cc/images/logo.png",
     "brand": {
