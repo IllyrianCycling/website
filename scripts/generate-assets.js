@@ -63,57 +63,45 @@ function buildRobots() {
 }
 
 function buildSchema(itineraries) {
-  const base = {
-    '@context': 'https://schema.org',
-  };
-
-  const location = Object.assign({}, base, {
-    '@type': 'SportsActivityLocation',
-    name: 'Illyrian Cycling',
-    description:
-      'Performance cycling in Montenegro. Guided or self-guided performance blocks, engineered around terrain, load, recovery and progression.',
-    url: HOME,
-    image: HOME + 'images/logo.png',
-    telephone: '+38268101978',
-    priceRange: '€€',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Tivat',
-      addressCountry: 'ME',
+  const graph = [
+    {
+      '@type': 'SportsActivityLocation',
+      '@id': HOME + '#organization',
+      name: 'Illyrian Cycling',
+      description:
+        'Performance cycling in Montenegro. Guided camps or self-guided performance blocks.',
+      url: HOME,
+      image: HOME + 'images/logo.png',
+      logo: HOME + 'images/logo.png',
+      telephone: '+38268101978',
+      priceRange: '€€',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Tivat',
+        addressCountry: 'ME',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 42.4361,
+        longitude: 18.6961,
+      },
+      areaServed: [
+        { '@type': 'Country', name: 'Montenegro' },
+        { '@type': 'Place', name: 'Balkans' },
+      ],
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 42.4361,
-      longitude: 18.6961,
+    {
+      '@type': 'WebSite',
+      '@id': HOME + '#website',
+      url: HOME,
+      name: 'Illyrian Cycling',
+      inLanguage: 'en',
+      publisher: { '@id': HOME + '#organization' },
     },
-  });
+  ];
 
-  const product = Object.assign({}, base, {
-    '@type': 'Product',
-    name: 'Illyrian Cycling Performance Blocks',
-    description:
-      'Guided or self-guided performance blocks. One methodology, engineered around Montenegro\u2019s terrain, load, recovery and progression.',
-    url: HOME + '#self-guided',
-    image: HOME + 'images/logo.png',
-    brand: { '@type': 'Brand', name: 'Illyrian Cycling' },
-    offers: {
-      '@type': 'AggregateOffer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'EUR',
-      offerCount: itineraries.length,
-      offers: itineraries.map((it) => ({
-        '@type': 'Offer',
-        name: it.name + ' — ' + it.tagline,
-        description: it.summary,
-        url: HOME + '#it-' + it.id,
-        availability: 'https://schema.org/InStock',
-      })),
-    },
-  });
-
-  const schema = [location, product];
-  const json = JSON.stringify(schema, null, 2);
-  fs.writeFileSync(path.join(FRONTEND, 'schema.json'), json + '\n', 'utf8');
+  const schema = { '@context': 'https://schema.org', '@graph': graph };
+  fs.writeFileSync(path.join(FRONTEND, 'schema.json'), JSON.stringify(schema, null, 2) + '\n', 'utf8');
   return schema;
 }
 
@@ -151,7 +139,7 @@ function main() {
 
   console.log('sitemap.xml entries: 1');
   console.log('robots.txt written');
-  console.log('schema.json written (' + schema.length + ' @type nodes)');
+  console.log('schema.json written (' + schema['@graph'].length + ' @type nodes)');
 }
 
 main();
