@@ -38,7 +38,7 @@
           '<span class="time">DAY ' + d.day + ' \u00B7 ' + d.load + '</span>' +
           '<h4>' + d.name + '</h4>' +
           '<p>' + d.purpose + '</p>' +
-          '<p class="day-meta">Distance: ' + d.distance + ' \u00B7 Elevation: ' + d.elevation + '</p>' +
+          '<p class="day-meta">Distance: <span class="accent">TBD</span> \u00B7 Elevation: <span class="accent">TBD</span></p>' +
           '</div>';
       }).join('');
     }

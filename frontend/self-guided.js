@@ -80,7 +80,7 @@
           <span class="time">DAY ${d.day} · ${d.load}</span>
           <h4>${d.name}</h4>
           <p>${d.purpose}</p>
-          <p class="day-meta">Distance: ${d.distance} &nbsp;&middot;&nbsp; Elevation: ${d.elevation}</p>
+          <p class="day-meta">Distance: <span class="accent">TBD</span> &nbsp;&middot;&nbsp; Elevation: <span class="accent">TBD</span></p>
         </div>
       `).join('');
     }
