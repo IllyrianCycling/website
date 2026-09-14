@@ -606,18 +606,6 @@ h2 {
   display: none;
 }
 
-.mobile-br {
-  display: none;
-}
-
-.mid-dot {
-  display: inline;
-}
-
-.mobile-dot {
-  display: inline;
-}
-
 .press-source {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1454,18 +1442,6 @@ footer {
 
   .hero-cta-group {
     bottom: calc(3.5rem + 50px);
-  }
-
-  .mobile-br {
-    display: block;
-  }
-
-  .mid-dot {
-    display: none;
-  }
-
-  .mobile-dot {
-    display: none;
   }
 
   .nav {

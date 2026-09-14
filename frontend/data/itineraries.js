@@ -32,7 +32,7 @@ window.ILLYRIAN.itineraries = [
     loadModel: ['LOAD', 'LOAD', 'PEAK'],
     days: [
       {
-        day: '01',
+        day: '1',
         name: 'COASTAL OPENING',
         distance: '\u2014',
         elevation: '\u2014',
@@ -40,7 +40,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Introduce the terrain and establish a baseline load.'
       },
       {
-        day: '02',
+        day: '2',
         name: 'MOUNTAIN LOAD',
         distance: '\u2014',
         elevation: '\u2014',
@@ -48,7 +48,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'First climbing stimulus out of the coast.'
       },
       {
-        day: '03',
+        day: '3',
         name: 'ADRIATIC EDGE',
         distance: '\u2014',
         elevation: '\u2014',
@@ -81,7 +81,7 @@ window.ILLYRIAN.itineraries = [
     loadModel: ['LOAD', 'LOAD', 'RECOVER', 'LOAD', 'PEAK'],
     days: [
       {
-        day: '01',
+        day: '1',
         name: 'COASTAL OPENING',
         distance: '\u2014',
         elevation: '\u2014',
@@ -89,7 +89,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Introduce the terrain and establish a baseline load.'
       },
       {
-        day: '02',
+        day: '2',
         name: 'MOUNTAIN LOAD',
         distance: '\u2014',
         elevation: '\u2014',
@@ -97,7 +97,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Major climbing stimulus in the Dinaric Alps.'
       },
       {
-        day: '03',
+        day: '3',
         name: 'RECOVERY',
         distance: '\u2014',
         elevation: '\u2014',
@@ -105,7 +105,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Absorb accumulated load before the next block.'
       },
       {
-        day: '04',
+        day: '4',
         name: 'HIGH TERRAIN',
         distance: '\u2014',
         elevation: '\u2014',
@@ -113,7 +113,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Primary performance day on high terrain.'
       },
       {
-        day: '05',
+        day: '5',
         name: 'ADRIATIC EDGE',
         distance: '\u2014',
         elevation: '\u2014',
@@ -146,7 +146,7 @@ window.ILLYRIAN.itineraries = [
     loadModel: ['LOAD', 'LOAD', 'RECOVER', 'LOAD', 'LOAD', 'RECOVER', 'PEAK'],
     days: [
       {
-        day: '01',
+        day: '1',
         name: 'COASTAL OPENING',
         distance: '\u2014',
         elevation: '\u2014',
@@ -154,7 +154,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Introduce the terrain and establish a baseline load.'
       },
       {
-        day: '02',
+        day: '2',
         name: 'MOUNTAIN LOAD',
         distance: '\u2014',
         elevation: '\u2014',
@@ -162,7 +162,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'First major climbing stimulus.'
       },
       {
-        day: '03',
+        day: '3',
         name: 'RECOVERY',
         distance: '\u2014',
         elevation: '\u2014',
@@ -170,7 +170,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Absorb load and reset before the second block.'
       },
       {
-        day: '04',
+        day: '4',
         name: 'HIGH TERRAIN',
         distance: '\u2014',
         elevation: '\u2014',
@@ -178,7 +178,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Primary performance day on high terrain.'
       },
       {
-        day: '05',
+        day: '5',
         name: 'DURMITOR LOAD',
         distance: '\u2014',
         elevation: '\u2014',
@@ -186,7 +186,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Second major objective in the Dinaric Alps.'
       },
       {
-        day: '06',
+        day: '6',
         name: 'RECOVERY',
         distance: '\u2014',
         elevation: '\u2014',
@@ -194,7 +194,7 @@ window.ILLYRIAN.itineraries = [
         purpose: 'Absorb accumulated load before the final day.'
       },
       {
-        day: '07',
+        day: '7',
         name: 'ADRIATIC EDGE',
         distance: '\u2014',
         elevation: '\u2014',
