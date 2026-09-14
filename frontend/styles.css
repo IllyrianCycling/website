@@ -127,8 +127,7 @@ a {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
   color: var(--accent);
 }
 
@@ -306,7 +305,6 @@ html {
 }
 
 section.why,
-section.blocks,
 section.delivery,
 section.routes,
 section.testimonials {
@@ -316,7 +314,6 @@ section.testimonials {
 }
 
 section.why { background: rgba(10, 10, 10, 0.85); }
-section.blocks { background: rgba(17, 17, 17, 0.9); }
 section.delivery { background: rgba(17, 17, 17, 0.9); }
 section.routes { background: rgba(10, 10, 10, 0.85); }
 section.testimonials { background: rgba(10, 10, 10, 0.85); }
@@ -830,19 +827,6 @@ section.bespoke-section::before {
   color: var(--text-soft);
 }
 
-/* SELF-GUIDED INTERACTIVE SYSTEM */
-.sg-formats {
-  margin-top: 2rem;
-  padding-top: 0;
-  border-top: none;
-}
-
-.sg-format-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
 .sg-fallback {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -851,47 +835,6 @@ section.bespoke-section::before {
   line-height: 1.5;
   margin: 0.5rem 0 1rem;
   grid-column: 1 / -1;
-}
-
-/* ITINERARY CARDS (rendered by self-guided.js; .card surface + .sg-card behaviour) */
-.sg-card {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.sg-card:hover .sg-card-head h3 {
-  color: var(--accent);
-}
-
-.sg-card.is-active {
-  border-color: var(--accent);
-  background: rgba(212, 120, 79, 0.08);
-}
-
-.sg-card.is-active .sg-card-head h3 {
-  color: var(--accent);
-}
-
-.sg-card-head h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.sg-card-head .route-type {
-  margin-bottom: 1rem;
-}
-
-.sg-load-model {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 1.25rem 0;
-}
-
-.sg-load-model-inline {
-  flex-wrap: wrap;
 }
 
 .sg-load {
@@ -910,82 +853,6 @@ section.bespoke-section::before {
 .sg-load-recover, .sg-load-low { border-color: #3a4a45; color: #7fa39a; }
 .sg-load-peak { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 .sg-load-high { border-color: var(--accent); color: #e08a64; }
-
-.sg-metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem 1.25rem;
-  border-top: 1px solid var(--card-border);
-  padding-top: 1.25rem;
-}
-
-.sg-metrics span {
-  display: block;
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.2rem;
-}
-
-.sg-metrics strong {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.sg-card-foot {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.sg-price {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-.sg-enquire {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(212, 120, 79, 0.4);
-  padding-bottom: 2px;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.sg-enquire:hover {
-  color: #e08a64;
-  border-color: var(--accent);
-}
-
-/* BLOCK ARCHITECTURE */
-.block-architecture {
-  margin-top: 4rem;
-}
-
-.load-model-bar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.sg-home-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
 
 /* TIMELINE (bespoke day-by-day progression) */
 .timeline {
@@ -1384,8 +1251,7 @@ footer {
 /* 1024px and below */
 @media (max-width: 1024px) {
   .why-grid,
-  .route-grid,
-  .sg-format-grid {
+  .route-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1414,10 +1280,8 @@ footer {
      (long mono labels, badges) push 1fr columns beyond the viewport. */
   .why-grid > *,
   .route-grid > *,
-  .sg-format-grid > *,
   .testimonial-grid > *,
   .choose-grid > *,
-  .sg-metrics > *,
   .route-stats > *,
   .bespoke-duration,
   .contact-form > * {
@@ -1429,7 +1293,6 @@ footer {
   }
 
   section.why,
-  section.blocks,
   section.delivery,
   section.routes,
   section.testimonials {
@@ -1491,8 +1354,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .choose-grid,
-  .sg-format-grid {
+  .choose-grid {
     grid-template-columns: 1fr;
   }
 
