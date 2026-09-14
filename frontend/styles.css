@@ -287,6 +287,13 @@ a {
   transform: translateY(-2px);
 }
 
+/* Compact desktop CTA: 20% smaller padding, text size unchanged. */
+@media (min-width: 769px) {
+  .cta--compact {
+    padding: 0.72rem 1.76rem;
+  }
+}
+
 /* SECTIONS */
 html {
   scroll-behavior: smooth;
