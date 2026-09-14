@@ -602,6 +602,10 @@ h2 {
   color: var(--text-soft);
 }
 
+.press-quote-br {
+  display: none;
+}
+
 .press-source {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1557,6 +1561,11 @@ footer {
 
   .press-quote {
     font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .press-quote-br {
+    display: block;
   }
 }
 
