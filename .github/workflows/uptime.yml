@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Check website uptime
         run: |
-          URL="https://illyriancycling.cc/"
+          URL="https://illyriancycling.cc/health"
           STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 30 "$URL")
           echo "HTTP status: $STATUS"
           if [ "$STATUS" -ne 200 ]; then
