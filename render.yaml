@@ -7,6 +7,10 @@ services:
     startCommand: npm start
     plan: free
     autoDeploy: true
+    filter:
+      - backend/**
+      - frontend/**
+      - render.yaml
     envVars:
       - key: RESEND_API_KEY
         sync: false
@@ -24,3 +28,6 @@ services:
     buildCommand: ""
     staticPublishPath: .
     autoDeploy: true
+    filter:
+      - frontend/**
+      - render.yaml
