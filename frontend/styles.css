@@ -1431,8 +1431,17 @@ footer {
   section.why,
   section.blocks,
   section.delivery,
-  section.routes {
+  section.routes,
+  section.testimonials {
     padding: 3.5rem 0;
+  }
+
+  section.bespoke-section {
+    padding: 4rem 0 4.5rem;
+  }
+
+  .why-grid article {
+    padding: 1.5rem 1.25rem;
   }
 
   .hero-inner {
@@ -1502,6 +1511,10 @@ footer {
     padding: 1.5rem;
   }
 
+  .testimonial-grid blockquote {
+    padding: 1.5rem;
+  }
+
   /* Let the card CTAs reach the same 240px cap as the other buttons by
      trimming the default 2.25rem card padding on narrow screens. */
   .choose-grid .card {
@@ -1514,6 +1527,22 @@ footer {
 
   .block-label {
     margin: 2.5rem 0 1.25rem;
+  }
+
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+
+  .route-grid {
+    margin-bottom: 2rem;
+  }
+
+  .choose-relationship {
+    margin-bottom: 2rem;
+  }
+
+  .testimonials h2 {
+    margin-bottom: 1.5rem;
   }
 
   .bespoke-duration {
@@ -1549,6 +1578,14 @@ footer {
 
   .contact-form .cta {
     margin-top: 0.5rem;
+  }
+
+  .rides p {
+    margin-bottom: 2.5rem;
+  }
+
+  .rides h2 {
+    margin-bottom: 0.75rem;
   }
 
   /* Extra bottom clearance so the submit button clears the fixed
@@ -1606,6 +1643,11 @@ footer {
   }
 
   .route-card {
+    padding: 1.25rem;
+  }
+
+  .choose-grid .card,
+  .testimonial-grid blockquote {
     padding: 1.25rem;
   }
 
