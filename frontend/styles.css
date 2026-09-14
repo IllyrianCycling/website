@@ -606,6 +606,18 @@ h2 {
   display: none;
 }
 
+.mobile-br {
+  display: none;
+}
+
+.mid-dot {
+  display: inline;
+}
+
+.mobile-dot {
+  display: inline;
+}
+
 .press-source {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1444,6 +1456,18 @@ footer {
     bottom: calc(3.5rem + 50px);
   }
 
+  .mobile-br {
+    display: block;
+  }
+
+  .mid-dot {
+    display: none;
+  }
+
+  .mobile-dot {
+    display: none;
+  }
+
   .nav {
     position: static;
     height: 80px;
@@ -1488,14 +1512,14 @@ footer {
   }
 
   .cta {
-    font-size: 0.68rem;
-    padding: 0.68rem 1.4rem;
+    font-size: 0.58rem;
+    padding: 0.58rem 1.19rem;
     /* Narrow mobile cap for every page CTA (nav CONTACT is exempt via
-       .nav .nav-cta -> width:auto). 192px keeps the pill clear of the
+       .nav .nav-cta -> width:auto). 163px keeps the pill clear of the
        floating chat/music stack (44px + 0.75rem offset on the right)
        even on 320px-wide screens. */
     width: 100%;
-    max-width: 192px;
+    max-width: 163px;
   }
 
   .route-card {
@@ -1519,6 +1543,12 @@ footer {
   .bespoke-duration {
     grid-template-columns: 1fr;
     max-width: 260px;
+  }
+
+  .bespoke-duration-btn {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    padding: 0.64rem 0.85rem;
   }
 
   .method-line {
