@@ -198,7 +198,7 @@ if (musicToggle) {
     if (!track) {
       track = new Audio();
       track.loop = true;
-      track.preload = 'metadata';
+      track.preload = 'none';
       track.addEventListener('error', () => {
         logMusicError('source load');
         tryNextSource();
