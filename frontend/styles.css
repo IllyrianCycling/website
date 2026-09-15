@@ -340,6 +340,9 @@ h2 {
 }
 
 .section-intro {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   color: var(--text-muted);
   max-width: 680px;
   margin: 0 auto 3rem;
@@ -1056,10 +1059,10 @@ section.bespoke-section::before {
 
 .rides p {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.72rem;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.16em;
   margin-bottom: 4rem;
 }
 
