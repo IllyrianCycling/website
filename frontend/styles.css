@@ -304,6 +304,10 @@ a {
     font-size: 0.8rem;
   }
 
+  .bespoke-open {
+    line-height: 2.2;
+  }
+
   .testimonials h2 {
     margin-bottom: 2.01rem;
   }
@@ -417,6 +421,8 @@ h2 {
     "icon"
     "heading"
     "body";
+  text-align: center;
+  align-items: center;
 }
 
 .why-grid article > .icon {
@@ -431,6 +437,7 @@ h2 {
 .why-grid article > p {
   grid-area: body;
   margin-top: 1rem;
+  align-self: start;
 }
 
 .why-grid article:hover {
@@ -440,7 +447,7 @@ h2 {
 .why-grid .icon {
   width: 40px;
   height: 40px;
-  margin-bottom: 1.25rem;
+  margin: 0 auto 1.25rem;
   color: var(--accent);
 }
 
