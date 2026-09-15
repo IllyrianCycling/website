@@ -367,6 +367,7 @@ h2 {
 
 /* MONO BLOCK LABEL */
 .block-label {
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
