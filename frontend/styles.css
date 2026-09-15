@@ -1422,6 +1422,10 @@ footer {
     display: block;
   }
 
+  .bespoke-open {
+    line-height: 2.15;
+  }
+
   .block-label {
     margin: 2.5rem 0 1.25rem;
   }
