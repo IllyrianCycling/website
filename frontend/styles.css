@@ -1270,6 +1270,11 @@ footer {
   color: var(--accent);
 }
 
+.bespoke-open {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 /* ============================================================ */
 /* RESPONSIVE
 /* ============================================================ */
