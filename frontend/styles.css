@@ -693,7 +693,7 @@ section.bespoke-section::before {
   font-size: clamp(1.8rem, 3vw, 2.2rem);
   letter-spacing: 0.08em;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .bespoke-section h3::after {
@@ -1416,6 +1416,10 @@ footer {
 
   .method {
     gap: 0.5rem;
+  }
+
+  .bespoke-open-break {
+    display: block;
   }
 
   .block-label {
