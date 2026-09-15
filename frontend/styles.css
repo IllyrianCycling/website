@@ -288,9 +288,24 @@ a {
 }
 
 /* Compact desktop CTA: 20% smaller padding, text size unchanged. */
+/* Desktop straplines enlarged 15%. */
 @media (min-width: 769px) {
   .cta--compact {
     padding: 0.72rem 1.76rem;
+  }
+
+  .block-label,
+  .section-intro,
+  .rides p {
+    font-size: 0.83rem;
+  }
+
+  .choose-relationship {
+    font-size: 0.8rem;
+  }
+
+  .testimonials h2 {
+    margin-bottom: 2.01rem;
   }
 }
 
