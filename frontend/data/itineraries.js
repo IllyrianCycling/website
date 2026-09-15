@@ -10,7 +10,7 @@ window.ILLYRIAN = window.ILLYRIAN || {};
 window.ILLYRIAN.itineraries = [
   {
     id: 'it-3day',
-    name: '3 DAY',
+    name: '03 DAY PERFORMANCE BLOCK',
     tagline: 'COAST TO MOUNTAIN',
     summary:
       'A compact introduction to Montenegro\u2019s coast-to-mountain terrain. Three consecutive riding days with no scheduled recovery.',
@@ -59,7 +59,7 @@ window.ILLYRIAN.itineraries = [
   },
   {
     id: 'it-5day',
-    name: '5 DAY',
+    name: '05 DAY PERFORMANCE BLOCK',
     tagline: 'THE PERFORMANCE BLOCK',
     summary:
       'The core Illyrian self-guided block. A complete progression engineered around accumulated load, recovery and a defined peak.',
@@ -124,7 +124,7 @@ window.ILLYRIAN.itineraries = [
   },
   {
     id: 'it-7day',
-    name: '7 DAY',
+    name: '07 DAY PERFORMANCE BLOCK',
     tagline: 'DEEP PROGRESSION',
     summary:
       'A deeper performance progression with additional recovery and terrain variation. Designed for a longer accumulation of load.',
