@@ -24,7 +24,7 @@ const isDesktop = window.innerWidth >= 768;
 if (twLocation && twCoords && twTagline) {
   const twSequence = [
     { el: twLocation, text: '[ LOCATION ]' },
-    { el: twCoords, text: "42° 23′ 56.76″ N, 18° 49′ 6.24″ E" },
+    { el: twCoords, text: "42° 23′ 56″ N, 18° 49′ 6″ E" },
     { el: twTagline, text: isDesktop ? '// UNMAPPED' : 'UNMAPPED' },
   ];
 

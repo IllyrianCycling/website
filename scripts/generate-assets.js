@@ -69,21 +69,22 @@ function buildSchema(itineraries) {
       '@id': HOME + '#organization',
       name: 'Illyrian Cycling',
       description:
-        'Performance cycling in Montenegro. Guided camps or self-guided performance blocks.',
+        'Performance cycling based in Lovćen, Montenegro. Guided camps or self-guided performance blocks.',
       url: HOME,
       image: HOME + 'images/logo.png',
       logo: HOME + 'images/logo.png',
+      hasMap: 'https://www.google.com/maps/place/Lov%C4%87en/@42.3994444,18.8188889',
       telephone: '+38268101978',
       priceRange: '€€',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Tivat',
+        addressLocality: 'Lovćen',
         addressCountry: 'ME',
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 42.4361,
-        longitude: 18.6961,
+        latitude: 42.3991,
+        longitude: 18.8184,
       },
       areaServed: [
         { '@type': 'Country', name: 'Montenegro' },

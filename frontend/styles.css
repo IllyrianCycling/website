@@ -376,6 +376,17 @@ h2 {
   line-height: 1.7;
 }
 
+/* LOCALITY SUBTITLE (Lovćen) */
+.about-locale {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-align: center;
+  margin: -0.35rem 0 1.5rem;
+}
+
 /* MONO BLOCK LABEL */
 .block-label {
   display: block;
