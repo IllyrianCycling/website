@@ -83,8 +83,8 @@ function buildSchema(itineraries) {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 42.3991,
-        longitude: 18.8184,
+        latitude: 42.3994444,
+        longitude: 18.8188889,
       },
       areaServed: [
         { '@type': 'Country', name: 'Montenegro' },
