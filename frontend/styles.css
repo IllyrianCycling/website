@@ -501,8 +501,8 @@ h2 {
 .choose-sub {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  letter-spacing: 0.1em;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
@@ -524,9 +524,10 @@ h2 {
 }
 
 .choose-items h4 {
-  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--text-primary);
   margin: 1rem 0 0.25rem;
 }
@@ -542,10 +543,13 @@ h2 {
 }
 
 .choose-core {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  line-height: 1.7;
-  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--accent);
   border-left: 2px solid rgba(var(--accent-rgb), 0.5);
   padding-left: 0.9rem;
   margin-bottom: 1.5rem;
@@ -667,21 +671,6 @@ section.bespoke-section {
   z-index: 2;
   padding: 5.5rem 0 6rem;
   background: var(--section-bg-alt);
-  border-top: 1px solid rgba(var(--accent-rgb), 0.35);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
-}
-
-section.bespoke-section::before {
-  content: '';
-  position: absolute;
-  top: -10rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 760px;
-  height: 760px;
-  background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.09), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .bespoke-section .container {
@@ -692,46 +681,32 @@ section.bespoke-section::before {
 .bespoke-title {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(3.15rem, 8.4vw, 5.6rem);
-  letter-spacing: 0.14em;
-  line-height: 1;
-  background: linear-gradient(135deg, #f0a57e 0%, var(--accent) 60%, #b25a36 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-  filter: drop-shadow(0 0 28px rgba(var(--accent-rgb), 0.25));
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
 }
 
 .bespoke-section .choose-tag {
-  font-size: 0.9rem;
-  letter-spacing: 0.26em;
-  color: var(--text-primary);
-  margin-bottom: 1.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
 }
 
 .bespoke-section h3 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   letter-spacing: 0.08em;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
 }
 
-.bespoke-section h3::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 2px;
-  margin: 0.9rem auto 0;
-  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.7), transparent);
-}
-
 .bespoke-section h3 + p {
-  font-size: 0.95rem;
-  color: var(--text-soft);
+  font-size: 0.85rem;
+  color: var(--text-muted);
   line-height: 1.8;
   letter-spacing: 0.01em;
   max-width: 620px;
@@ -740,21 +715,9 @@ section.bespoke-section::before {
   margin-bottom: 2rem;
 }
 
-.bespoke-section .cta {
-  background: rgba(var(--accent-rgb), 0.42);
-  border-color: var(--accent);
-  box-shadow: 0 6px 24px rgba(var(--accent-rgb), 0.18);
-}
-
-.bespoke-section .cta:hover {
-  transform: translateY(-2px);
-  background: rgba(var(--accent-rgb), 0.5);
-  box-shadow: 0 8px 28px rgba(var(--accent-rgb), 0.25);
-}
-
 .bespoke-principle {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 2rem;
@@ -1525,6 +1488,7 @@ footer {
 
   .press-content {
     gap: 0.9rem;
+    white-space: normal;
   }
 
   .press-quote {
@@ -1624,4 +1588,146 @@ footer {
     padding: 0.9rem;
     font-size: 0.95rem;
   }
+}
+
+/* 02b 2027 PERFORMANCE CAMPS */
+section.camps {
+  position: relative;
+  z-index: 2;
+  padding: 5.5rem 0 6rem;
+  background: var(--section-bg-alt);
+  border-top: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
+}
+
+section.camps::before {
+  content: '';
+  position: absolute;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 760px;
+  height: 760px;
+  background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.09), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section.camps .block-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  margin-bottom: 1.25rem;
+}
+
+section.camps h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.875rem, 4.35vw, 3.3rem);
+  letter-spacing: 0.1em;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+section.camps .section-intro {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 2.5rem;
+}
+
+.camp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.camp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.camp-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.camp-month {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.camp-dates {
+  font-family: var(--font-display);
+  font-size: clamp(1.72rem, 2.7vw, 1.95rem);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.camp-week {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.camps-range {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin: 0 0 2.25rem;
+}
+
+@media (max-width: 1024px) {
+  .camp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .camp-dates {
+    font-size: clamp(2rem, 3.4vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  section.camps {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .camp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camp-grid > * {
+    min-width: 0;
+  }
+
+  .camp-card {
+    padding: 1.5rem;
+  }
+
+  .camp-dates {
+    font-size: clamp(1.75rem, 8.75vw, 4.25rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .camp-card {
+    padding: 1.25rem;
+  }
+}
+
+/* 06 DELIVERY MODEL — single full-width Guided card */
+.choose-grid .card--accent {
+  grid-column: 1 / -1;
 }
