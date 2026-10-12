@@ -180,10 +180,8 @@ async function crawl() {
     }).length;
     if (svgNoLabel) warnings.push(`${svgNoLabel} <svg> without accessible label`);
 
-// JS-rendered fallback audit
-    const daysText = $('#bespoke-days').text().trim();
+    // JS-rendered fallback audit
     const loadModelText = $('#bespoke-load-model').text().trim();
-    if (daysText.length < 20) issues.push('no readable fallback text in #bespoke-days');
     if (loadModelText.length < 5) warnings.push('#bespoke-load-model has no fallback content');
 
     report.routes.push(pageMeta);

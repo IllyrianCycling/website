@@ -1,13 +1,12 @@
 /* ILLYRIAN CYCLING — BESPOKE BLOCK RENDERER
- * Duration selectors (03 / 05 / 07) drive the load-model preview and the
- * day-by-day progression timeline. Reuses window.ILLYRIAN.itineraries.
+ * Duration selectors (03 / 05 / 07) drive the load-model preview.
+ * Reuses window.ILLYRIAN.itineraries.
  */
 (function () {
   const data = (window.ILLYRIAN && window.ILLYRIAN.itineraries) || [];
   const group = document.querySelector('.bespoke-duration');
   const tagline = document.querySelector('.bespoke-preview-tagline');
   const model = document.getElementById('bespoke-load-model');
-  const daysEl = document.getElementById('bespoke-days');
 
   function loadClass(label) {
     return 'sg-load sg-load-' + label.toLowerCase().replace(/[^a-z]/g, '');
@@ -31,17 +30,6 @@
         .map(function (l) { return '<span class="' + loadClass(l) + '">' + l + '</span>'; })
         .join('');
     }
-
-    if (daysEl) {
-      daysEl.innerHTML = it.days.map(function (d) {
-        return '<div>' +
-          '<span class="time">DAY ' + d.day + ' \u00B7 ' + d.load + '</span>' +
-          '<h4>' + d.name + '</h4>' +
-          '<p>' + d.purpose + '</p>' +
-          '<p class="day-meta">Distance: <span class="accent">TBD</span> \u00B7 Elevation: <span class="accent">TBD</span></p>' +
-          '</div>';
-      }).join('');
-    }
   }
 
   if (group) {
@@ -56,7 +44,7 @@
     });
   }
 
-  if (data.length && group && daysEl) {
+  if (data.length && group) {
     var featured = (window.ILLYRIAN && window.ILLYRIAN.featuredItinerary) || data[0].id;
     var initial = null;
     for (var j = 0; j < data.length; j++) {
