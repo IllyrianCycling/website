@@ -1489,6 +1489,12 @@ footer {
     opacity: 0.8;
   }
 
+  .press-quote {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
   .music-toggle {
     font-size: 0.52rem;
   }
