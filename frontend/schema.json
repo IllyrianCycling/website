@@ -5,7 +5,7 @@
       "@type": "SportsActivityLocation",
       "@id": "https://illyriancycling.cc/#organization",
       "name": "Illyrian Cycling",
-      "description": "Performance cycling based in Lovćen, Montenegro. Guided camps or self-guided performance blocks.",
+      "description": "Performance cycling camps in Montenegro, based in Lovćen. Fixed-date guided camps plus bespoke guided or self-guided performance blocks.",
       "url": "https://illyriancycling.cc/",
       "image": "https://illyriancycling.cc/images/logo.png",
       "logo": "https://illyriancycling.cc/images/logo.png",
@@ -41,6 +41,242 @@
       "inLanguage": "en",
       "publisher": {
         "@id": "https://illyriancycling.cc/#organization"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-05",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-05-10",
+      "endDate": "2027-05-14",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Boka Bay and Lovćen",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lovćen",
+          "addressCountry": "ME"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.3994444,
+          "longitude": 18.8188889
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "1999",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-06",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-06-14",
+      "endDate": "2027-06-18",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Boka Bay and Lovćen",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lovćen",
+          "addressCountry": "ME"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.3994444,
+          "longitude": 18.8188889
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "1999",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-07",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based in the Durmitor mountains. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-07-12",
+      "endDate": "2027-07-16",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Durmitor",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durmitor",
+          "addressCountry": "ME"
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "2399",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-08",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based in the Durmitor mountains. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-08-16",
+      "endDate": "2027-08-20",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Durmitor",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durmitor",
+          "addressCountry": "ME"
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "2399",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-09",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-09-13",
+      "endDate": "2027-09-17",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Boka Bay and Lovćen",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lovćen",
+          "addressCountry": "ME"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.3994444,
+          "longitude": 18.8188889
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "1999",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://illyriancycling.cc/#camp-2027-10",
+      "name": "Illyrian Performance Cycling Camp",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "startDate": "2027-10-11",
+      "endDate": "2027-10-15",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Boka Bay and Lovćen",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lovćen",
+          "addressCountry": "ME"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.3994444,
+          "longitude": 18.8188889
+        }
+      },
+      "image": [
+        "https://illyriancycling.cc/images/og-image.jpg"
+      ],
+      "url": "https://illyriancycling.cc/#camps",
+      "maximumAttendeeCapacity": 8,
+      "organizer": {
+        "@id": "https://illyriancycling.cc/#organization",
+        "name": "Illyrian Cycling",
+        "url": "https://illyriancycling.cc/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://illyriancycling.cc/#camps",
+        "price": "1999",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
       }
     }
   ]
