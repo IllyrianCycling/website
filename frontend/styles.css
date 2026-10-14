@@ -1207,10 +1207,29 @@ footer {
   }
 }
 
-/* 768px and below */
-@media (max-width: 768px) {
+/* Mobile: 767px and below. All mobile-only overrides live inside this single
+   max-width boundary so tablets/desktops (>768px) are never affected. */
+@media (max-width: 767px) {
+  /* Mobile spacing scale — scoped to the mobile viewport only so desktop and
+     tablet spacing remain untouched. Established in Phase 1 to be consumed by
+     the subsequent mobile layout phases. */
+  :root {
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+  }
+
   /* Prevent horizontal overflow on mobile (html + body must both clip for
      Android/Chrome; some complex elements exceed the viewport otherwise). */
+  html,
+  body {
+    max-width: 100%;
+  }
+
   html {
     overflow-x: hidden;
     /* .nav is position: static here (not fixed), so no header offset is
@@ -1228,6 +1247,18 @@ footer {
     overflow: hidden;
   }
 
+  /* Constrain replaced media so oversized assets can never widen the layout on
+     narrow screens. Class-based sizing in the base sheet still wins on
+     specificity, so tuned assets (logo, press, footer) are unaffected. */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  video {
+    max-width: 100%;
+  }
+
   /* Grid items default to min-width:auto which lets intrinsic content
      (long mono labels, badges) push 1fr columns beyond the viewport. */
   .why-grid > *,
@@ -1240,48 +1271,59 @@ footer {
     min-width: 0;
   }
 
+  /* Edge gutters: every main content wrapper keeps text clear of the screen
+     edge (minimum 16px). */
   .container {
-    padding: 0 1.5rem;
+    padding: 0 var(--space-md);
   }
 
   section.why,
   section.delivery,
   section.routes,
-  section.testimonials {
-    padding: 3.5rem 0;
+  section.testimonials,
+  section.camps {
+    padding: var(--space-2xl) 0;
   }
 
   section.bespoke-section {
-    padding: 4rem 0 4.5rem;
+    padding: var(--space-2xl) 0;
   }
 
   .why-grid article {
-    padding: 1.5rem 1.25rem;
+    padding: var(--space-lg) var(--space-md);
   }
 
   .hero-inner {
-    padding: 0 1.5rem;
-    transform: translateY(-50px);
+    padding: 0 var(--space-md);
+    transform: translateY(-30px);
   }
 
   .hero-cta-group {
-    bottom: calc(3.5rem + 50px);
+    bottom: calc(2.5rem + 30px);
   }
 
   .nav {
     position: static;
-    height: 80px;
-    padding: 0 1.25rem;
+    height: 72px;
+    padding: 0 var(--space-md);
   }
 
   .nav-brand {
-    font-size: 1.1rem;
-    letter-spacing: 0.14em;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    letter-spacing: 0.12em;
+  }
+
+  /* Expand the brand logo link to a 48x48px tap target without growing the
+     mark itself. */
+  .logo {
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
   }
 
   .logo img {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .nav-links {
@@ -1295,48 +1337,54 @@ footer {
   .hero-meta {
     flex-direction: column;
     height: auto;
-    gap: 0.2rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    gap: var(--space-xs);
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
   }
 
   .why-grid,
   .route-grid,
   .testimonial-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .choose-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .cta {
-    font-size: 0.58rem;
-    padding: 0.58rem 1.19rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    padding: var(--space-md) var(--space-lg);
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     /* Narrow mobile cap for every page CTA (nav CONTACT is exempt via
-       .nav .nav-cta -> width:auto). 163px keeps the pill clear of the
-       floating chat/music stack (44px + 0.75rem offset on the right)
-       even on 320px-wide screens. */
+       .nav .nav-cta -> width:auto). */
     width: 100%;
-    max-width: 163px;
+    max-width: 240px;
+    line-height: 1.2;
   }
 
   .route-card {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 
   .testimonial-grid blockquote {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 
 /* Let the card CTAs reach the same 240px cap as the other buttons by
      trimming the default 2.25rem card padding on narrow screens. */
   .choose-grid .card {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 
   .method {
-    gap: 0.5rem;
+    gap: var(--space-sm);
   }
 
   .bespoke-open-break {
@@ -1344,52 +1392,59 @@ footer {
   }
 
   .bespoke-open {
-    line-height: 2.15;
+    line-height: 1.6;
   }
 
   .block-label {
-    margin: 2.5rem 0 1.25rem;
+    margin: var(--space-xl) 0 var(--space-md);
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   }
 
   .section-intro {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+    line-height: 1.6;
   }
 
   .route-grid {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-xl);
   }
 
   .choose-relationship {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-xl);
   }
 
   .testimonials h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-lg);
   }
 
   .bespoke-duration {
     grid-template-columns: 1fr;
-    max-width: 260px;
+    max-width: 240px;
+    gap: var(--space-md);
   }
 
   .bespoke-duration-btn {
-    font-size: 0.68rem;
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
     letter-spacing: 0.12em;
-    padding: 0.64rem 0.85rem;
+    padding: var(--space-sm) var(--space-md);
+    min-height: 48px;
+    width: 100%;
   }
 
   .method-line {
     flex-direction: column;
-    gap: 0.2rem;
+    gap: var(--space-sm);
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   }
 
   footer {
-    gap: 0.5rem;
+    gap: var(--space-sm);
   }
 
   .contact-form {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: var(--space-md);
   }
 
   .form-row:nth-child(3),
@@ -1400,56 +1455,289 @@ footer {
 
   .contact-form .cta {
     margin-top: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    padding: var(--space-md);
+    font-size: 1rem;
+    min-height: 48px;
+    line-height: 1.5;
+  }
+
+  .form-row label {
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   }
 
   .rides p {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-xl);
   }
 
   .rides h2 {
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-sm);
   }
 
-  /* Extra bottom clearance so the submit button clears the fixed
-     WhatsApp/music stack (44px x2 + gap + 0.75rem offset) at full scroll. */
+  /* Match the section rhythm at the top; keep extra bottom clearance so the
+     submit button clears the fixed WhatsApp/music stack (48px x2 + gap +
+     offset) at full scroll. */
   .rides {
-    padding-bottom: 7.5rem;
+    padding: var(--space-2xl) var(--space-md) 7.5rem;
   }
 
   .press-banner {
-    padding: 3.5rem 0;
+    padding: var(--space-2xl) 0;
   }
 
   .press-content {
-    gap: 0.9rem;
+    gap: var(--space-md);
     white-space: normal;
   }
 
   .press-quote {
-    font-size: 0.78rem;
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+    line-height: 1.5;
     text-align: center;
+  }
+
+  /* Touch targets: inline text links (hero coordinates, locality, coords
+     label) receive a transparent 48px-tall hit area via a pseudo-element so
+     they meet the 48x48px minimum without changing their rendered size. */
+  a.block-label,
+  .about-locale a,
+  .tw-line a {
+    position: relative;
+  }
+
+  a.block-label::after,
+  .about-locale a::after,
+  .tw-line a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 48px;
+    transform: translateY(-50%);
+  }
+
+  /* ============================================================ */
+  /* Phase 3 — Typography & fluid scales (mobile only)            */
+  /* ============================================================ */
+  /* Fluid type tokens: every mobile heading/body size is expressed in
+     clamp() so type scales with the viewport instead of sitting on a
+     fixed size. Bounds stay legible at 320px and never dominate at
+     767px — h1 ~30–42px, h2 ~26–32px, h3 ~22–27px, body ~15–17px. */
+  :root {
+    --fs-h1: clamp(1.9rem, 8.5vw, 2.6rem);
+    --fs-h2: clamp(1.6rem, 3.6vw, 2rem);
+    --fs-h3: clamp(1.35rem, 5vw, 1.7rem);
+    --fs-card-h: clamp(1.15rem, 4vw, 1.35rem);
+    --fs-body: clamp(0.95rem, 4vw, 1.05rem);
+    --fs-label: clamp(0.75rem, 3vw, 0.82rem);
+    /* Body copy over the dark video sections: lift muted text from
+       #8a8478 (~5.3:1) to #9a948a (~6.1–6.6:1) for AA legibility in
+       varied lighting. Mobile-only; desktop keeps its token. */
+    --text-muted: #9a948a;
+  }
+
+  /* Headings — display type, fluid. */
+  .hero-inner h1 {
+    font-size: var(--fs-h1);
+  }
+
+  h2,
+  .bespoke-title,
+  section.camps h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.1;
+  }
+
+  .bespoke-section h3,
+  .choose-sub {
+    font-size: var(--fs-h3);
+    line-height: 1.2;
+  }
+
+  .why-grid article > h3,
+  .route-card h3 {
+    font-size: var(--fs-card-h);
+  }
+
+  .choose-core {
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
+  }
+
+  .bespoke-principle {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
+  .route-stats strong {
+    font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+  }
+
+  /* Body copy — comfortable reading size with 1.5–1.6 leading. */
+  .choose-desc,
+  .choose-items p,
+  .why-grid article > p,
+  .testimonial-grid p,
+  .bespoke-section h3 + p,
+  .press-quote,
+  .route-stats span,
+  .section-intro,
+  section.camps .section-intro,
+  .sg-fallback,
+  .contact-status {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+  }
+
+  /* Subheaders, eyebrows and mono labels — floored at 12px. */
+  .block-label,
+  .choose-tag,
+  .bespoke-section .choose-tag,
+  .choose-relationship,
+  .camps-range,
+  .camp-month,
+  .camp-week,
+  .route-type,
+  .testimonial-grid cite,
+  .form-row label,
+  .bespoke-preview-tagline,
+  .method-line,
+  .sg-load,
+  .bespoke-load-model .sg-load,
+  .vibe-tag,
+  .hero-eyebrow,
+  .hero-meta,
+  .press-label {
+    font-size: var(--fs-label);
+    line-height: 1.5;
+  }
+
+  .about-locale {
+    font-size: clamp(0.85rem, 3.4vw, 0.95rem);
+  }
+
+  /* Buttons stay comfortably legible. */
+  .cta,
+  .bespoke-duration-btn {
+    font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+  }
+
+  /* Form guardrail — never below 16px or iOS Safari zooms on focus. */
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    font-size: 16px;
+  }
+
+  /* ============================================================ */
+  /* Phase 4 — Line breaks, wrapping & final polish (mobile only) */
+  /* ============================================================ */
+  /* Desktop-oriented manual breaks inside flowing body copy are neutralised
+     on mobile so text reflows to the available width instead of ragging into
+     short, unbalanced lines. Intentional display straight-lines (bespoke
+     principle / core) keep their break; desktop markup is untouched. */
+  .br-desktop-only {
+    display: none;
+  }
+
+  /* With the desktop break hidden, the "THE FULL EXPERIENCE" label becomes
+     its own line so the description reads as a clean block rather than
+     butting up against the label. */
+  .choose-desc .choose-tag {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Natural word wrapping: long or unbreakable strings must never punch
+     through the container on a narrow screen. overflow-wrap only acts on
+     words wider than the line, so ordinary prose is left untouched. */
+  .hero-inner h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  cite,
+  .cta,
+  .bespoke-duration-btn,
+  .method-values,
+  .route-stats strong,
+  .press-quote,
+  .form-row label,
+  .contact-status {
+    overflow-wrap: break-word;
+  }
+
+  /* Display headings read best when the browser evens out their line
+     lengths on the narrowest screens. */
+  h2,
+  h3,
+  .hero-inner h1,
+  .bespoke-title {
+    text-wrap: balance;
+  }
+}
+
+/* Mobile landscape (short viewports, still <=767px wide). The hero is a
+   centred stack with an absolutely-positioned CTA; on very short landscape
+   screens the two can collide and the CTA can sit under the fold. Flow the
+   CTA beneath the copy and let the hero grow past the viewport instead. */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    height: auto;
+    min-height: 100dvh;
+    padding: 0.5rem 0 1.25rem;
+  }
+
+  .hero-inner {
+    transform: none;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-meta {
+    margin-top: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  .hero-cta-group {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
   }
 }
 
 /* 480px and below */
 @media (max-width: 480px) {
   .nav {
-    padding: 1.5rem 1rem 0.75rem;
-    height: 72px;
+    padding: 0 var(--space-md);
+    height: 64px;
   }
 
   .nav-brand {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
     letter-spacing: 0.1em;
   }
 
   .logo img {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .hero-inner {
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
   }
 
   .hero-inner h1 .hi-line,
@@ -1457,41 +1745,62 @@ footer {
     display: block;
   }
 
+  .hero-eyebrow-main {
+    font-size: clamp(1rem, 3.5vw, 1.15rem);
+    letter-spacing: 0.2em;
+  }
+
+  .hero-eyebrow-sub {
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+    letter-spacing: 0.13em;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-inner h1 {
+    font-size: var(--fs-h1);
+    line-height: 1.05;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.25rem;
+  }
+
   .container {
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
   }
 
   .route-card {
-    padding: 1.25rem;
+    padding: var(--space-md);
   }
 
   .choose-grid .card,
   .testimonial-grid blockquote {
-    padding: 1.25rem;
+    padding: var(--space-md);
   }
 
   .why-grid article {
-    padding: 1.5rem 1.25rem;
+    padding: var(--space-lg) var(--space-md);
   }
 
   .floating-actions {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    gap: 0.5rem;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    gap: var(--space-sm);
   }
 
   .music-toggle,
   .chat-link {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     background: rgba(255, 255, 255, 0.02);
     border-color: rgba(255, 255, 255, 0.13);
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   .press-quote {
-    font-size: 0.7rem;
-    line-height: 1.4;
+    font-size: var(--fs-body);
+    line-height: 1.6;
     text-align: center;
     width: 100%;
   }
@@ -1501,7 +1810,7 @@ footer {
   }
 
   .music-toggle {
-    font-size: 0.52rem;
+    font-size: 0.62rem;
   }
 
   .chat-link svg {
@@ -1520,14 +1829,21 @@ footer {
   }
 
   .contact-form {
-    gap: 1rem;
+    gap: var(--space-md);
   }
 
   .form-row input,
   .form-row select,
   .form-row textarea {
-    padding: 0.9rem;
-    font-size: 0.95rem;
+    padding: var(--space-md);
+    font-size: 16px;
+    min-height: 48px;
+    line-height: 1.5;
+  }
+
+  .form-row label {
+    font-size: var(--fs-label);
+    line-height: 1.5;
   }
 }
 
@@ -1636,17 +1952,24 @@ section.camps .section-intro {
   }
 
   .camp-dates {
-    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-size: clamp(1.4rem, 8vw, 2rem);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   section.camps {
-    padding: 4.5rem 0 5rem;
+    padding: var(--space-2xl) 0;
+  }
+
+  /* Clamp the fixed-width decorative glow to the viewport so it can never
+     extend the horizontal scroll area on narrow screens. */
+  section.camps::before {
+    max-width: 100vw;
   }
 
   .camp-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .camp-grid > * {
@@ -1654,17 +1977,29 @@ section.camps .section-intro {
   }
 
   .camp-card {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 
   .camp-dates {
-    font-size: clamp(1.75rem, 8.75vw, 4.25rem);
+    font-size: clamp(1.5rem, 7.5vw, 2.5rem);
+    white-space: normal;
+    word-break: keep-all;
+    hyphens: none;
+  }
+
+  .camps-range {
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
+  }
+
+  section.camps .section-intro {
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+    line-height: 1.6;
   }
 }
 
 @media (max-width: 480px) {
   .camp-card {
-    padding: 1.25rem;
+    padding: var(--space-md);
   }
 }
 
