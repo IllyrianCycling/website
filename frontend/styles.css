@@ -1741,10 +1741,10 @@ footer {
     align-self: center;
     width: auto;
     max-width: none;
-    min-height: 48px;
-    padding: 0.65rem 1.35rem;
+    min-height: 38px;
+    padding: 0.52rem 1.08rem;
     font-family: var(--font-body);
-    font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+    font-size: clamp(0.68rem, 2.56vw, 0.76rem);
     font-weight: 500;
     letter-spacing: 0.1em;
     line-height: 1.2;
@@ -2059,11 +2059,6 @@ section.camps .section-intro {
   .camps-range {
     font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   }
-
-  section.camps .section-intro {
-    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
-    line-height: 1.6;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2075,4 +2070,26 @@ section.camps .section-intro {
 /* 06 DELIVERY MODEL — single full-width Guided card */
 .choose-grid .card--accent {
   grid-column: 1 / -1;
+}
+
+/* ============================================================ */
+/* SECTION DESCRIPTIONS — standardised with the Bespoke copy     */
+/* ============================================================ */
+/* The Performance Camps and Three Connected Riding Zones intro copy now
+   shares the Bespoke description's reading style (body font, size and
+   leading) instead of the monospace label treatment. */
+section.camps .section-intro,
+section.routes .section-intro {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 767px) {
+  section.camps .section-intro,
+  section.routes .section-intro {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+  }
 }
