@@ -1,5 +1,5 @@
 /*
- * Illyrian Cycling — Google Indexing API client
+ * Illyrian Cycling - Google Indexing API client
  *
  * Submits URL_UPDATED notifications to the Google Indexing API for newly
  * deployed routes/itineraries, with exponential-backoff quota handling.

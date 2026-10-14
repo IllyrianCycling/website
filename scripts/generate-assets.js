@@ -1,5 +1,5 @@
 /*
- * Illyrian Cycling — Search Asset Generator
+ * Illyrian Cycling - Search Asset Generator
  *
  * Reads data/itineraries.js and regenerates:
  *   frontend/sitemap.xml

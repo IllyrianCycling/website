@@ -1,7 +1,7 @@
-/* ILLYRIAN CYCLING — SELF-GUIDED PERFORMANCE
+/* ILLYRIAN CYCLING - SELF-GUIDED PERFORMANCE
  * Configurable itinerary data model.
  *
- * Where final route metrics are not yet confirmed, values use "—" (TBC).
+ * Where final route metrics are not yet confirmed, values use "-" (TBC).
  * Replace these placeholders with confirmed numbers as the architecture is finalised.
  */
 

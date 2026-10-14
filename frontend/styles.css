@@ -1210,7 +1210,7 @@ footer {
 /* Mobile: 767px and below. All mobile-only overrides live inside this single
    max-width boundary so tablets/desktops (>768px) are never affected. */
 @media (max-width: 767px) {
-  /* Mobile spacing scale — scoped to the mobile viewport only so desktop and
+  /* Mobile spacing scale - scoped to the mobile viewport only so desktop and
      tablet spacing remain untouched. Established in Phase 1 to be consumed by
      the subsequent mobile layout phases. */
   :root {
@@ -1525,12 +1525,12 @@ footer {
   }
 
   /* ============================================================ */
-  /* Phase 3 — Typography & fluid scales (mobile only)            */
+  /* Phase 3 - Typography & fluid scales (mobile only)            */
   /* ============================================================ */
   /* Fluid type tokens: every mobile heading/body size is expressed in
      clamp() so type scales with the viewport instead of sitting on a
      fixed size. Bounds stay legible at 320px and never dominate at
-     767px — h1 ~30–42px, h2 ~26–32px, h3 ~22–27px, body ~15–17px. */
+     767px - h1 ~30–42px, h2 ~26–32px, h3 ~22–27px, body ~15–17px. */
   :root {
     --fs-h1: clamp(2.28rem, 10.2vw, 3.12rem);
     --fs-h2: clamp(1.6rem, 3.6vw, 2rem);
@@ -1544,7 +1544,7 @@ footer {
     --text-muted: #9a948a;
   }
 
-  /* Headings — display type, fluid. */
+  /* Headings - display type, fluid. */
   .hero-inner h1 {
     font-size: var(--fs-h1);
   }
@@ -1579,7 +1579,7 @@ footer {
     font-size: clamp(1.05rem, 4.5vw, 1.25rem);
   }
 
-  /* Body copy — comfortable reading size with 1.5–1.6 leading. */
+  /* Body copy - comfortable reading size with 1.5–1.6 leading. */
   .choose-desc,
   .choose-items p,
   .why-grid article > p,
@@ -1595,7 +1595,7 @@ footer {
     line-height: 1.6;
   }
 
-  /* Subheaders, eyebrows and mono labels — floored at 12px. */
+  /* Subheaders, eyebrows and mono labels - floored at 12px. */
   .block-label,
   .choose-tag,
   .bespoke-section .choose-tag,
@@ -1628,7 +1628,7 @@ footer {
     font-size: clamp(0.85rem, 3.2vw, 0.95rem);
   }
 
-  /* Form guardrail — never below 16px or iOS Safari zooms on focus. */
+  /* Form guardrail - never below 16px or iOS Safari zooms on focus. */
   .form-row input,
   .form-row select,
   .form-row textarea {
@@ -1636,7 +1636,7 @@ footer {
   }
 
   /* ============================================================ */
-  /* Phase 4 — Line breaks, wrapping & final polish (mobile only) */
+  /* Phase 4 - Line breaks, wrapping & final polish (mobile only) */
   /* ============================================================ */
   /* Desktop-oriented manual breaks inside flowing body copy are neutralised
      on mobile so text reflows to the available width instead of ragging into
@@ -1684,7 +1684,7 @@ footer {
   }
 
   /* ============================================================ */
-  /* Phase 5 — Hero, quote & CTA refinements (mobile only)        */
+  /* Phase 5 - Hero, quote & CTA refinements (mobile only)        */
   /* ============================================================ */
 
   /* Hero eyebrow ("MONTENEGRO" + "ADRIATIC COAST // DINARIC ALPS")
@@ -1704,7 +1704,7 @@ footer {
     font-size: clamp(0.76rem, 3.2vw, 0.84rem);
   }
 
-  /* Road.cc quote — the shrink-wrapped flex item must span the column so
+  /* Road.cc quote - the shrink-wrapped flex item must span the column so
      every wrapped line is centred rather than left-aligned. */
   .press-link {
     display: block;
@@ -1717,7 +1717,7 @@ footer {
     text-align: center;
   }
 
-  /* Bespoke intro — break after "…built around the rider" (not after
+  /* Bespoke intro - break after "…built around the rider" (not after
      "Illyrian architecture") with a gap before the next sentence. */
   .bespoke-open {
     display: block;
@@ -2067,13 +2067,13 @@ section.camps .section-intro {
   }
 }
 
-/* 06 DELIVERY MODEL — single full-width Guided card */
+/* 06 DELIVERY MODEL - single full-width Guided card */
 .choose-grid .card--accent {
   grid-column: 1 / -1;
 }
 
 /* ============================================================ */
-/* SECTION DESCRIPTIONS — standardised with the Bespoke copy     */
+/* SECTION DESCRIPTIONS - standardised with the Bespoke copy     */
 /* ============================================================ */
 /* The Performance Camps and Three Connected Riding Zones intro copy now
    shares the Bespoke description's reading style (body font, size and

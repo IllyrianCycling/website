@@ -1,4 +1,4 @@
-/* ILLYRIAN CYCLING — BESPOKE BLOCK RENDERER
+/* ILLYRIAN CYCLING - BESPOKE BLOCK RENDERER
  * Duration selectors (03 / 05 / 07) drive the load-model preview.
  * Reuses window.ILLYRIAN.itineraries.
  */
