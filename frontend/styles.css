@@ -1532,7 +1532,7 @@ footer {
      fixed size. Bounds stay legible at 320px and never dominate at
      767px — h1 ~30–42px, h2 ~26–32px, h3 ~22–27px, body ~15–17px. */
   :root {
-    --fs-h1: clamp(1.9rem, 8.5vw, 2.6rem);
+    --fs-h1: clamp(2.28rem, 10.2vw, 3.12rem);
     --fs-h2: clamp(1.6rem, 3.6vw, 2rem);
     --fs-h3: clamp(1.35rem, 5vw, 1.7rem);
     --fs-card-h: clamp(1.15rem, 4vw, 1.35rem);
@@ -1682,6 +1682,75 @@ footer {
   .bespoke-title {
     text-wrap: balance;
   }
+
+  /* ============================================================ */
+  /* Phase 5 — Hero, quote & CTA refinements (mobile only)        */
+  /* ============================================================ */
+
+  /* Hero eyebrow ("MONTENEGRO" + "ADRIATIC COAST // DINARIC ALPS")
+     scaled down 20% relative to the shared mobile label size. */
+  .hero-eyebrow {
+    font-size: clamp(0.6rem, 2.4vw, 0.656rem);
+  }
+
+  /* Extra breathing room between the hero title and the location meta. */
+  .hero-meta {
+    margin-top: 2.75rem;
+  }
+
+  /* Montenegro section standfirst ("COASTAL SPEED TO THE DINARIC
+     SPINE") scaled down 20%. */
+  .why .section-intro {
+    font-size: clamp(0.76rem, 3.2vw, 0.84rem);
+  }
+
+  /* Road.cc quote — the shrink-wrapped flex item must span the column so
+     every wrapped line is centred rather than left-aligned. */
+  .press-link {
+    display: block;
+    width: 100%;
+  }
+
+  .press-quote {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Bespoke intro — break after "…built around the rider" (not after
+     "Illyrian architecture") with a gap before the next sentence. */
+  .bespoke-open {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .bespoke-open-break {
+    display: inline;
+  }
+
+  /* Unified CTA token: identical font, size, spacing, shape and hit area
+     for the hero, bespoke, delivery-card and contact-form buttons. */
+  .cta,
+  .cta--compact,
+  .card .cta,
+  .choose-grid .card .cta,
+  .contact-form .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: auto;
+    max-width: none;
+    min-height: 48px;
+    padding: 0.65rem 1.35rem;
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
 
 /* Mobile landscape (short viewports, still <=767px wide). The hero is a
@@ -1746,12 +1815,12 @@ footer {
   }
 
   .hero-eyebrow-main {
-    font-size: clamp(1rem, 3.5vw, 1.15rem);
+    font-size: clamp(0.8rem, 2.8vw, 0.92rem);
     letter-spacing: 0.2em;
   }
 
   .hero-eyebrow-sub {
-    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+    font-size: clamp(0.64rem, 1.84vw, 0.72rem);
     letter-spacing: 0.13em;
   }
 
