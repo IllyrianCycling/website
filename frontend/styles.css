@@ -1602,7 +1602,7 @@ footer {
   .choose-relationship,
   .camps-range,
   .camp-month,
-  .camp-week,
+  .camp-location,
   .route-type,
   .testimonial-grid cite,
   .form-row label,
@@ -1696,12 +1696,6 @@ footer {
   /* Extra breathing room between the hero title and the location meta. */
   .hero-meta {
     margin-top: 2.75rem;
-  }
-
-  /* Montenegro section standfirst ("COASTAL SPEED TO THE DINARIC
-     SPINE") scaled down 20%. */
-  .why .section-intro {
-    font-size: clamp(0.76rem, 3.2vw, 0.84rem);
   }
 
   /* Road.cc quote - the shrink-wrapped flex item must span the column so
@@ -1997,12 +1991,32 @@ section.camps .section-intro {
   white-space: nowrap;
 }
 
-.camp-week {
+.camp-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.camp-location {
   font-family: var(--font-mono);
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+.camp-price {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .camps-range {
@@ -2059,6 +2073,10 @@ section.camps .section-intro {
   .camps-range {
     font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   }
+
+  .camp-price {
+    font-size: clamp(0.82rem, 2.8vw, 0.92rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -2075,9 +2093,11 @@ section.camps .section-intro {
 /* ============================================================ */
 /* SECTION DESCRIPTIONS - standardised with the Bespoke copy     */
 /* ============================================================ */
-/* The Performance Camps and Three Connected Riding Zones intro copy now
-   shares the Bespoke description's reading style (body font, size and
+/* The Montenegro standfirst ("COASTAL SPEED TO THE DINARIC SPINE"), the
+   Performance Camps and the Three Connected Riding Zones intro copy now
+   share the Bespoke description's reading style (body font, size and
    leading) instead of the monospace label treatment. */
+section.why .section-intro,
 section.camps .section-intro,
 section.routes .section-intro {
   font-family: var(--font-body);
@@ -2087,6 +2107,7 @@ section.routes .section-intro {
 }
 
 @media (max-width: 767px) {
+  section.why .section-intro,
   section.camps .section-intro,
   section.routes .section-intro {
     font-size: var(--fs-body);
