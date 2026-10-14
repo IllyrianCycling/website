@@ -1387,10 +1387,6 @@ footer {
     gap: var(--space-sm);
   }
 
-  .bespoke-open-break {
-    display: block;
-  }
-
   .bespoke-open {
     line-height: 1.6;
   }
@@ -1711,15 +1707,11 @@ footer {
     text-align: center;
   }
 
-  /* Bespoke intro - break after "…built around the rider" (not after
-     "Illyrian architecture") with a gap before the next sentence. */
+  /* Bespoke intro - the opening line breaks onto its own line with a gap
+     before the next sentence. */
   .bespoke-open {
     display: block;
     margin-bottom: 0.75rem;
-  }
-
-  .bespoke-open-break {
-    display: inline;
   }
 
   /* Unified CTA token: identical font, size, spacing, shape and hit area
