@@ -179,6 +179,7 @@ a {
 .hero-eyebrow-main {
   font-size: 1.342em;
   letter-spacing: 0.28em;
+  padding-left: 0.28em;
   margin-left: 3px;
   text-shadow: 0 0 12px rgba(164, 158, 146, 0.35);
 }
@@ -1804,6 +1805,7 @@ footer {
   .hero-eyebrow-main {
     font-size: clamp(0.88rem, 3.08vw, 1.012rem);
     letter-spacing: 0.2em;
+    padding-left: 0.2em;
   }
 
   .hero-eyebrow-sub {
