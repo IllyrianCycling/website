@@ -177,7 +177,7 @@ a {
 }
 
 .hero-eyebrow-main {
-  font-size: 1.22em;
+  font-size: 1.342em;
   letter-spacing: 0.28em;
   margin-left: 3px;
   text-shadow: 0 0 12px rgba(164, 158, 146, 0.35);
@@ -1338,7 +1338,7 @@ footer {
     flex-direction: column;
     height: auto;
     gap: var(--space-xs);
-    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    font-size: clamp(0.825rem, 2.75vw, 0.9625rem);
     letter-spacing: 0.08em;
     line-height: 1.4;
   }
@@ -1692,6 +1692,7 @@ footer {
   /* Extra breathing room between the hero title and the location meta. */
   .hero-meta {
     margin-top: 2.75rem;
+    font-size: clamp(0.825rem, 2.75vw, 0.9625rem);
   }
 
   /* Road.cc quote - the shrink-wrapped flex item must span the column so
@@ -1801,7 +1802,7 @@ footer {
   }
 
   .hero-eyebrow-main {
-    font-size: clamp(0.8rem, 2.8vw, 0.92rem);
+    font-size: clamp(0.88rem, 3.08vw, 1.012rem);
     letter-spacing: 0.2em;
   }
 
