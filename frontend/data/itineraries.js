@@ -1,4 +1,4 @@
-/* ILLYRIAN CYCLING - SELF-GUIDED PERFORMANCE
+/* ILLYRIAN CYCLING - PERFORMANCE BLOCKS
  * Configurable itinerary data model.
  *
  * Where final route metrics are not yet confirmed, values use "-" (TBC).
@@ -62,7 +62,7 @@ window.ILLYRIAN.itineraries = [
     name: '05 DAY PERFORMANCE BLOCK',
     tagline: 'THE PERFORMANCE BLOCK',
     summary:
-      'The core Illyrian self-guided block. A complete progression engineered around accumulated load, recovery and a defined peak.',
+      'The core Illyrian block. A complete progression engineered around accumulated load, recovery and a defined peak.',
     metrics: {
       duration: '5 days',
       ridingDays: '4',
@@ -207,15 +207,3 @@ window.ILLYRIAN.itineraries = [
 
 /* Which itinerary is shown as the worked example in the PROGRESSION section. */
 window.ILLYRIAN.featuredItinerary = 'it-5day';
-
-/* Comparison between the flagship camp and self-guided performance. */
-window.ILLYRIAN.comparison = [
-  { row: 'Coaching', camp: 'Included', selfGuided: 'Independent' },
-  { row: 'Route design', camp: 'Included', selfGuided: 'Included' },
-  { row: 'Performance architecture', camp: 'Included', selfGuided: 'Included' },
-  { row: 'Group riding', camp: 'Yes', selfGuided: 'Optional / independent' },
-  { row: 'Support', camp: 'High-touch', selfGuided: 'Defined support' },
-  { row: 'Rider autonomy', camp: 'Lower', selfGuided: 'High' },
-  { row: 'Founder involvement', camp: 'High', selfGuided: 'Lower' },
-  { row: 'Experience', camp: 'Fully coached', selfGuided: 'Self-directed' }
-];

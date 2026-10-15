@@ -62,6 +62,26 @@ function buildRobots() {
   ].join('\n');
 }
 
+function readSchemaEvents(file) {
+  try {
+    const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return (doc['@graph'] || []).filter((node) => node['@type'] === 'Event');
+  } catch (err) {
+    return [];
+  }
+}
+
+function extractInlineEvents(html) {
+  const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  if (!match) return [];
+  try {
+    const doc = JSON.parse(match[1]);
+    return (doc['@graph'] || []).filter((node) => node['@type'] === 'Event');
+  } catch (err) {
+    return [];
+  }
+}
+
 function buildSchema(itineraries) {
   const graph = [
     {
@@ -69,7 +89,7 @@ function buildSchema(itineraries) {
       '@id': HOME + '#organization',
       name: 'Illyrian Cycling',
       description:
-        'Performance cycling based in Lovćen, Montenegro. Guided camps or self-guided performance blocks.',
+        'Performance cycling camps in Montenegro, based in Lovćen. Fixed-date guided camps plus bespoke guided performance blocks.',
       url: HOME,
       image: HOME + 'images/logo.png',
       logo: HOME + 'images/logo.png',
@@ -101,7 +121,8 @@ function buildSchema(itineraries) {
     },
   ];
 
-  const schema = { '@context': 'https://schema.org', '@graph': graph };
+  const events = readSchemaEvents(path.join(FRONTEND, 'schema.json'));
+  const schema = { '@context': 'https://schema.org', '@graph': graph.concat(events) };
   fs.writeFileSync(path.join(FRONTEND, 'schema.json'), JSON.stringify(schema, null, 2) + '\n', 'utf8');
   return schema;
 }
@@ -113,7 +134,12 @@ function injectInline(schema, indexPath) {
     return;
   }
   let html = fs.readFileSync(file, 'utf8');
-  const script = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  const baseGraph = schema['@graph'].filter((node) => node['@type'] !== 'Event');
+  const inlineSchema = {
+    '@context': schema['@context'],
+    '@graph': baseGraph.concat(extractInlineEvents(html)),
+  };
+  const script = `<script type="application/ld+json">\n${JSON.stringify(inlineSchema, null, 2)}\n</script>`;
   const start = '<!-- SEO JSON-LD START -->';
   const end = '<!-- SEO JSON-LD END -->';
   if (html.includes(start) && html.includes(end)) {

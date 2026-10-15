@@ -61,11 +61,11 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-// Legacy self-guided URL: hard 301 to the homepage section instead of the old
-// noindex meta-refresh page. Must be registered before express.static so the
-// static file never wins.
+// Legacy URL for the retired self-guided product. The 301 keeps old links
+// working. Must be registered before express.static so the static file never
+// wins.
 app.get('/self-guided.html', (req, res) => {
-  res.redirect(301, '/#self-guided');
+  res.redirect(301, '/');
 });
 
 app.use(express.static(FRONTEND_DIR));
