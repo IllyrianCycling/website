@@ -344,13 +344,13 @@
   <!-- SEO JSON-LD END -->
 
   <!-- Self-hosted fonts (replaces the render-blocking fonts.googleapis.com
-       stylesheet). Only the latin subsets used by above-the-fold text are
-       preloaded; the latin-ext subsets (Ć/ć etc.) load on demand while
-       scrolling. crossorigin is required for font preloads even same-origin.
-       Licences: fonts/OFL-*.txt -->
+       stylesheet). Only the h1 face that drives layout shift is preloaded;
+       the remaining latin subsets load via their @font-face rules and the
+       latin-ext subsets (Ć/ć etc.) load on demand while scrolling. Extra
+       preloads compete with styles.css on the critical path and delayed
+       LCP, so they are deliberately omitted. crossorigin is required for
+       font preloads even same-origin. Licences: fonts/OFL-*.txt -->
   <link rel="preload" href="fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
