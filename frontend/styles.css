@@ -203,6 +203,7 @@ a {
 }
 
 .hero-meta {
+  --meta-tracking: 0.1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,7 +213,8 @@ a {
   height: 1.5em;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--meta-tracking);
+  padding-left: var(--meta-tracking);
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
@@ -1336,11 +1338,11 @@ footer {
   }
 
   .hero-meta {
+    --meta-tracking: 0.08em;
     flex-direction: column;
     height: auto;
     gap: var(--space-xs);
     font-size: clamp(0.825rem, 2.75vw, 0.9625rem);
-    letter-spacing: 0.08em;
     line-height: 1.4;
   }
 
