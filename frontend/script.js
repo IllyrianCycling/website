@@ -63,12 +63,7 @@ if (twLocation && twCoords && twTagline) {
     typeNext();
   }
 
-  const startTimer = setTimeout(runTypewriter, 800);
-
-  window.addEventListener('unload', () => {
-    cancelled = true;
-    clearTimeout(startTimer);
-  });
+  setTimeout(runTypewriter, 800);
 }
 
 const routeCards = document.querySelectorAll('.route-card');
