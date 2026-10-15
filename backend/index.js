@@ -68,7 +68,28 @@ app.get('/self-guided.html', (req, res) => {
   res.redirect(301, '/');
 });
 
-app.use(express.static(FRONTEND_DIR));
+// Static asset caching. express.static defaults to `public, max-age=0`, which
+// made the browser revalidate styles.css/fonts/images on every single visit
+// (verified against production: Cache-Control public, max-age=0). HTML keeps
+// the default revalidation so a deploy is picked up immediately; fonts get the
+// longest lifetime, other immutable-path assets a day. ETag revalidation still
+// applies once a lifetime expires.
+function staticCacheControl(filePath) {
+  if (/\.(woff2?|otf|ttf)$/i.test(filePath)) {
+    return 'public, max-age=604800, must-revalidate';
+  }
+  if (/\.(css|js|mjs|png|jpe?g|gif|svg|ico|webp|avif|mp4|webm|mp3|xml|txt|json)$/i.test(filePath)) {
+    return 'public, max-age=86400, must-revalidate';
+  }
+  return null;
+}
+
+app.use(express.static(FRONTEND_DIR, {
+  setHeaders(res, filePath) {
+    const cacheControl = staticCacheControl(filePath);
+    if (cacheControl) res.setHeader('Cache-Control', cacheControl);
+  },
+}));
 
 // Music proxy: GitHub release assets are served as application/octet-stream,
 // which browsers refuse for <audio>. Stream the asset with the correct MIME

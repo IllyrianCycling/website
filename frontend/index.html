@@ -343,9 +343,14 @@
   </script>
   <!-- SEO JSON-LD END -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts (replaces the render-blocking fonts.googleapis.com
+       stylesheet). Only the latin subsets used by above-the-fold text are
+       preloaded; the latin-ext subsets (Ć/ć etc.) load on demand while
+       scrolling. crossorigin is required for font preloads even same-origin.
+       Licences: fonts/OFL-*.txt -->
+  <link rel="preload" href="fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
