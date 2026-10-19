@@ -1711,6 +1711,15 @@ footer {
     margin-bottom: 0.4rem;
   }
 
+  .bespoke-preview-tagline .tagline-sep {
+    display: none;
+  }
+
+  .bespoke-preview-tagline .tagline-name,
+  .bespoke-preview-tagline .tagline-desc {
+    display: block;
+  }
+
   /* Natural word wrapping: long or unbreakable strings must never punch
      through the container on a narrow screen. overflow-wrap only acts on
      words wider than the line, so ordinary prose is left untouched. */

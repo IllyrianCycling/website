@@ -23,7 +23,12 @@
       });
     }
 
-    if (tagline) tagline.textContent = it.name + ' \u00B7 ' + it.tagline;
+    if (tagline) {
+      tagline.innerHTML =
+        '<span class="tagline-name">' + it.name + '</span>' +
+        '<span class="tagline-sep"> \u00B7 </span>' +
+        '<span class="tagline-desc">' + it.tagline + '</span>';
+    }
 
     if (model) {
       model.innerHTML = it.loadModel
