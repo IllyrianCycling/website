@@ -1660,6 +1660,7 @@ footer {
   .camps-range,
   .camp-month,
   .camp-location,
+  .camp-level,
   .route-type,
   .testimonial-grid cite,
   .form-row label,
@@ -2065,7 +2066,8 @@ section.camps .section-intro {
   border-top: 1px solid var(--card-border);
 }
 
-.camp-location {
+.camp-location,
+.camp-level {
   font-family: var(--font-mono);
   font-size: 0.759rem;
   letter-spacing: 0.14em;
