@@ -2072,7 +2072,14 @@ section.camps .section-intro {
   font-size: 0.759rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.camp-location {
   color: var(--text-muted);
+}
+
+.camp-level {
+  color: var(--text-primary);
 }
 
 .camp-price {
