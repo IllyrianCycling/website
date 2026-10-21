@@ -139,14 +139,14 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-07",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based in the Durmitor mountains. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
       "startDate": "2027-07-12",
       "endDate": "2027-07-16",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
-        "name": "Durmitor",
+        "name": "Durmitor and Lovćen",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Durmitor",
@@ -180,14 +180,14 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-08",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, based in the Durmitor mountains. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day, fully supported performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, support vehicle, mechanic, on-bike nutrition, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
       "startDate": "2027-08-16",
       "endDate": "2027-08-20",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
-        "name": "Durmitor",
+        "name": "Durmitor and Lovćen",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Durmitor",
