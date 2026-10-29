@@ -24,7 +24,7 @@ const {
   SITE_NAME = 'Illyrian Cycling',
   PORT,
   ALLOWED_ORIGINS = '',
-  MUSIC_URL = 'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Supersonic.Shadows.mp3',
+  MUSIC_URL = 'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Between.the.Pines.mp3',
 } = process.env;
 
 const allowedOrigins = ALLOWED_ORIGINS.split(',').map((origin) => origin.trim()).filter(Boolean);

@@ -176,7 +176,7 @@ document.addEventListener('click', (e) => {
 const musicToggle = document.getElementById('music-toggle');
 const musicSources = [
   '/audio',
-  'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Supersonic.Shadows.mp3',
+  'https://github.com/IllyrianCycling/website/releases/download/audio-v1/Between.the.Pines.mp3',
 ];
 
 if (musicToggle) {
