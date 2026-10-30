@@ -4,11 +4,20 @@
    latin + latin-ext subsets only; every glyph the site renders is covered by
    one of those two ranges (see the non-ASCII audit: ° · Ć ć – ′ ″ €).
    Licence: SIL Open Font License 1.1 - fonts/OFL-*.txt.
-   Bebas Neue is a static 400 face. Inter and JetBrains Mono are variable, so
-   one file per subset serves the whole declared weight range.
+   Bebas Neue and Cinzel are static 400 faces. Inter and JetBrains Mono are
+   variable, so one file per subset serves the whole declared weight range.
    Weight ranges mirror the old Google Fonts request exactly
    (Bebas 400 | Inter 300;400;500;600;700 | JetBrains Mono 400;500;600) and
    font-display: swap matches display=swap, so rendering is unchanged. */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/cinzel-v19-latin-regular.woff2') format('woff2'),
+       url('fonts/cinzel-v19-latin-regular.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 @font-face {
   font-family: 'Bebas Neue';
   font-style: normal;
@@ -147,7 +156,7 @@ a {
 
 .nav-brand {
   margin-left: 10px;
-  font-family: 'Trajan Pro 3', 'Trajan Pro', 'Trajan', 'Cinzel', 'Palatino', Georgia, serif;
+  font-family: 'Cinzel', 'Trajan Pro 3', 'Trajan Pro', 'Trajan', 'Palatino', Georgia, serif;
   font-weight: 900;
   font-size: 1.46rem;
   letter-spacing: 0.25em;
@@ -1365,13 +1374,26 @@ footer {
 
   .nav {
     position: static;
+    display: flex;
+    align-items: center;
     height: 72px;
     padding: 0 var(--space-md);
   }
 
+  /* Mirror the desktop lockup proportions. The font size is tuned to the
+     emblem so cap height stays ~0.24x the emblem width, and tracking matches
+     the desktop 0.25em. margin-left compensates for the 48px tap target
+     around the 2.75rem emblem; margin-right cancels the trailing tracking.
+     The small top offset preserves the desktop's intentional text-below-
+     emblem-centre alignment caused by the flame spike. */
   .nav-brand {
-    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-    letter-spacing: 0.12em;
+    margin-left: 3.5px;
+    margin-right: -0.25em;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    line-height: 1;
+    position: relative;
+    top: -1px;
   }
 
   /* Expand the brand logo link to a 48x48px tap target without growing the
@@ -1385,6 +1407,7 @@ footer {
   .logo img {
     width: 2.75rem;
     height: 2.75rem;
+    flex-shrink: 0;
   }
 
   .nav-links {
@@ -1854,8 +1877,9 @@ footer {
   }
 
   .nav-brand {
-    font-size: clamp(0.85rem, 3vw, 0.95rem);
-    letter-spacing: 0.1em;
+    margin-left: 1.5px;
+    font-size: 0.72rem;
+    top: -0.16em;
   }
 
   .logo img {
