@@ -154,6 +154,11 @@ a {
   padding: 0 60px;
 }
 
+/* Only the 400 Cinzel face is declared in @font-face, so the 900 requested
+   here is synthesised (faux) bold by the browser. That rendering is approved
+   as-is; to get a heavier or crisper wordmark later, add a real 900 or
+   variable Cinzel file and declare it in @font-face rather than changing
+   this value. */
 .nav-brand {
   margin-left: 10px;
   font-family: 'Cinzel', 'Trajan Pro 3', 'Trajan Pro', 'Trajan', 'Palatino', Georgia, serif;
@@ -1380,12 +1385,16 @@ footer {
     padding: 0 var(--space-md);
   }
 
-  /* Mirror the desktop lockup proportions. The font size is tuned to the
-     emblem so cap height stays ~0.24x the emblem width, and tracking matches
-     the desktop 0.25em. margin-left compensates for the 48px tap target
-     around the 2.75rem emblem; margin-right cancels the trailing tracking.
-     The small top offset preserves the desktop's intentional text-below-
-     emblem-centre alignment caused by the flame spike. */
+  /* Mirror the desktop lockup proportions: the font size is tuned so cap
+     height stays ~0.24x the emblem width, and tracking matches desktop's
+     0.25em.
+
+     margin-left is tuned to the padding of the 48px tap target around the
+     emblem, so changing the emblem size or the tap target means retuning it.
+     letter-spacing: 0.25em pairs with the equal negative margin-right to
+     cancel the trailing tracking.
+     top: -1px compensates for the flame spike raising the emblem's bounding
+     box, preserving desktop's text-below-emblem-centre alignment. */
   .nav-brand {
     margin-left: 3.5px;
     margin-right: -0.25em;
@@ -1405,6 +1414,7 @@ footer {
   }
 
   .logo img {
+    /* Keep the emblem at its tuned size; never let the flex row squeeze it. */
     width: 2.75rem;
     height: 2.75rem;
     flex-shrink: 0;
@@ -1876,6 +1886,9 @@ footer {
     height: 64px;
   }
 
+  /* Same lockup tuning as the 767px block, scaled down: margin-left is tuned
+     to the tap target around the 2.5rem emblem, and top: -0.16em compensates
+     for the flame spike raising the emblem's bounding box. */
   .nav-brand {
     margin-left: 1.5px;
     font-size: 0.72rem;
@@ -1883,6 +1896,7 @@ footer {
   }
 
   .logo img {
+    /* Matches the 480px tuning above; keep the 40px emblem unshrinkable. */
     width: 2.5rem;
     height: 2.5rem;
   }
