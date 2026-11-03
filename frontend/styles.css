@@ -2113,19 +2113,6 @@ section.camps .section-intro {
   margin-top: 0.35rem;
 }
 
-/* The footer holds only the accommodation references now, centred in the
-   full card width and pushed to the bottom of the flex column. */
-.camp-meta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--card-border);
-}
-
 .camp-location,
 .camp-level {
   font-family: var(--font-mono);
@@ -2145,61 +2132,6 @@ section.camps .section-intro {
   color: var(--text-primary);
 }
 
-/* CAMP ACCOMMODATION METADATA (supporting hotel references) */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.camp-accommodation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.15rem 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.3;
-  color: var(--text-muted);
-}
-
-.camp-accommodation-sep {
-  color: var(--text-muted);
-}
-
-.camp-accommodation a {
-  color: var(--accent);
-  text-decoration: none;
-  padding: 0.35rem 0;
-  border-radius: 3px;
-  transition: color 0.2s ease;
-}
-
-.camp-accommodation a:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.camp-accommodation a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.accommodation-arrow {
-  margin-left: 0.15em;
-}
-
 .camps-range {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -2208,6 +2140,104 @@ section.camps .section-intro {
   color: var(--accent);
   text-align: center;
   margin: 0 0 2.25rem;
+}
+
+/* 02c ACCOMMODATION */
+section.accommodation {
+  position: relative;
+  z-index: 2;
+  padding: 4.5rem 0 5rem;
+  background: var(--section-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+
+section.accommodation .block-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  margin-bottom: 1.25rem;
+}
+
+section.accommodation h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: 0.1em;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+section.accommodation .section-intro {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: var(--text-soft);
+  max-width: 620px;
+  margin-bottom: 2.25rem;
+}
+
+.accommodation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.9rem 0;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.accommodation-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0 1.5rem;
+  border-left: 1px solid var(--card-border-strong);
+}
+
+.accommodation-item:first-child {
+  border-left: 0;
+}
+
+.accommodation-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.accommodation-area {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  section.accommodation {
+    padding: var(--space-2xl) 0;
+  }
+
+  section.accommodation .section-intro {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+  }
+
+  .accommodation-list {
+    gap: 0.35rem;
+  }
+
+  .accommodation-item {
+    width: 100%;
+    justify-content: center;
+    padding: 0.35rem 0;
+    border-left: 0;
+  }
 }
 
 @media (max-width: 1024px) {

@@ -95,7 +95,6 @@ function buildSchema(itineraries) {
       logo: HOME + 'images/logo.png',
       hasMap: 'https://www.google.com/maps/place/Lov%C4%87en/@42.3994444,18.8188889',
       telephone: '+38268101978',
-      priceRange: '€€',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Lovćen',

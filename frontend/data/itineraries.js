@@ -26,7 +26,6 @@ window.ILLYRIAN.itineraries = [
       difficulty: 'MODERATE',
       start: 'Tivat',
       finish: 'Kotor',
-      accommodation: 'Premium \u00B7 Hand-selected',
       price: null
     },
     loadModel: ['LOAD', 'LOAD', 'PEAK'],
@@ -75,7 +74,6 @@ window.ILLYRIAN.itineraries = [
       difficulty: 'HIGH',
       start: 'Tivat',
       finish: 'Tivat',
-      accommodation: 'Premium \u00B7 Hand-selected',
       price: null
     },
     loadModel: ['LOAD', 'LOAD', 'RECOVER', 'LOAD', 'PEAK'],
@@ -140,7 +138,6 @@ window.ILLYRIAN.itineraries = [
       difficulty: 'HIGH',
       start: 'Tivat',
       finish: 'Kotor',
-      accommodation: 'Premium \u00B7 Hand-selected',
       price: null
     },
     loadModel: ['LOAD', 'LOAD', 'RECOVER', 'LOAD', 'LOAD', 'RECOVER', 'PEAK'],

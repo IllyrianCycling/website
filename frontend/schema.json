@@ -46,7 +46,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-05",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-05-10",
       "endDate": "2027-05-14",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -69,7 +69,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
@@ -84,7 +84,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-06",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-06-14",
       "endDate": "2027-06-18",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -107,7 +107,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
@@ -122,7 +122,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-07",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-07-12",
       "endDate": "2027-07-16",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -140,7 +140,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
@@ -155,7 +155,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-08",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, in the Durmitor mountains, starting or finishing in Lovćen, our base. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-08-16",
       "endDate": "2027-08-20",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -173,7 +173,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
@@ -188,7 +188,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-09",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-09-13",
       "endDate": "2027-09-17",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -211,7 +211,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
@@ -226,7 +226,7 @@
       "@type": "Event",
       "@id": "https://illyriancycling.cc/#camp-2027-10",
       "name": "Illyrian Performance Cycling Camp",
-      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols and hand-selected accommodation. Groups are limited to eight riders.",
+      "description": "Five-day performance cycling camp in Montenegro, Monday to Friday, based around Boka Bay and Lovćen. Guided mountain climbs, pacing groups by FTP and climbing ability, recovery protocols. Groups are limited to six riders.",
       "startDate": "2027-10-11",
       "endDate": "2027-10-15",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -249,7 +249,7 @@
         "https://illyriancycling.cc/images/og-image.jpg"
       ],
       "url": "https://illyriancycling.cc/#camps",
-      "maximumAttendeeCapacity": 8,
+      "maximumAttendeeCapacity": 6,
       "organizer": {
         "@id": "https://illyriancycling.cc/#organization",
         "name": "Illyrian Cycling",
