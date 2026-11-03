@@ -939,7 +939,6 @@ section.bespoke-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-bottom: 4rem;
 }
 
 .route-card {
@@ -1498,10 +1497,6 @@ footer {
     margin-bottom: var(--space-lg);
     font-size: clamp(0.875rem, 2.5vw, 0.95rem);
     line-height: 1.6;
-  }
-
-  .route-grid {
-    margin-bottom: var(--space-xl);
   }
 
   .choose-relationship {
@@ -2142,11 +2137,11 @@ section.camps .section-intro {
   margin: 0 0 2.25rem;
 }
 
-/* 02c ACCOMMODATION */
+/* 03b ACCOMMODATION */
 section.accommodation {
   position: relative;
   z-index: 2;
-  padding: 4.5rem 0 5rem;
+  padding: 3rem 0 7rem;
   background: var(--section-bg);
   border-bottom: 1px solid var(--card-border);
 }
@@ -2246,12 +2241,12 @@ a.accommodation-name:focus-visible {
   font-size: 0.64rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 @media (max-width: 767px) {
   section.accommodation {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0 4rem;
   }
 
   section.accommodation .section-intro {
