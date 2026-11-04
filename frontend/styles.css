@@ -1172,6 +1172,22 @@ section.bespoke-section {
   color: #f28b82;
 }
 
+.form-privacy {
+  grid-column: 1 / -1;
+  margin-top: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.form-privacy a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 /* FOOTER */
 footer {
   position: relative;
@@ -1209,6 +1225,19 @@ footer {
   object-fit: cover;
   border-radius: 50%;
   border: none;
+}
+
+.footer-legal {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: color 0.3s ease;
+}
+
+.footer-legal:hover {
+  color: var(--accent);
 }
 
 /* FLOATING ACTION STACK */
@@ -2378,5 +2407,193 @@ section.routes .section-intro {
   section.routes .section-intro {
     font-size: var(--fs-body);
     line-height: 1.6;
+  }
+}
+
+/* ============================================================ */
+/* LEGAL / PRIVACY PAGE                                         */
+/* ============================================================ */
+.legal-page {
+  background: var(--bg-base);
+}
+
+.legal-nav {
+  position: static;
+}
+
+.legal-back {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: color 0.3s ease;
+}
+
+.legal-back:hover {
+  color: var(--accent);
+}
+
+.legal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+}
+
+.legal-eyebrow {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.legal h1 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f0ece4;
+}
+
+.legal-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.legal section {
+  margin-top: 2.25rem;
+}
+
+.legal h2 {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.legal h3 {
+  margin: 1.5rem 0 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legal p,
+.legal li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+.legal p + p {
+  margin-top: 0.9rem;
+}
+
+.legal ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.legal li {
+  margin-top: 0.45rem;
+}
+
+.legal strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legal a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+.legal a:hover {
+  color: #e8a184;
+}
+
+.legal-back-link {
+  display: inline-block;
+  margin-top: 3rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--card-border-strong);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.legal-back-link:hover {
+  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.5);
+}
+
+@media (max-width: 767px) {
+  .legal {
+    padding: 1.25rem 1rem 3.5rem;
+  }
+
+  .legal h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .legal p,
+  .legal li {
+    font-size: 1rem;
+  }
+
+  .legal-back {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media print {
+  body.legal-page {
+    background: #fff;
+    color: #000;
+  }
+
+  .legal-nav {
+    display: none;
+  }
+
+  .legal {
+    max-width: none;
+    padding: 0;
+  }
+
+  .legal h1,
+  .legal h2,
+  .legal h3,
+  .legal p,
+  .legal li,
+  .legal strong,
+  .legal a {
+    color: #000;
+  }
+
+  .legal-back-link {
+    display: none;
   }
 }

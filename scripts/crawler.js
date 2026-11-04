@@ -19,7 +19,8 @@ const BASE = arg('--base', 'https://illyriancycling.cc/');
 const OUT = arg('--out', path.join(__dirname, 'crawl-report.json'));
 const TIMEOUT = Number(arg('--timeout', '15000'));
 const MAX_PAGES = Number(arg('--max-pages', '50'));
-const EXPECTED_CANONICAL = arg('--canonical', 'https://illyriancycling.cc/');
+const SITE_CANONICAL = arg('--canonical', 'https://illyriancycling.cc/');
+const CANONICAL_ORIGIN = new URL(SITE_CANONICAL).origin;
 const VERIFY_PLACEHOLDER = 'YOUR_GOOGLE_CODE_HERE';
 const EXTERNAL_CHECK_LIMIT = Number(arg('--external-check-limit', '25'));
 
@@ -30,6 +31,23 @@ function arg(name, fallback) {
 
 function normalize(url) {
   return String(url).replace(/\/+$/, '');
+}
+
+// Every crawlable document is expected to name itself as canonical. The origin
+// comes from --canonical (production by default) so the crawler can also run
+// against a local server while still validating the per-page canonical path.
+function expectedCanonicalFor(pageUrl) {
+  const { pathname } = new URL(pageUrl);
+  let normalizedPath = pathname;
+
+  if (normalizedPath.endsWith('/index.html')) {
+    normalizedPath = normalizedPath.slice(0, -'index.html'.length);
+  }
+  if (!normalizedPath.endsWith('/') && !/\.[a-z0-9]+$/i.test(normalizedPath)) {
+    normalizedPath += '/';
+  }
+
+  return CANONICAL_ORIGIN + normalizedPath;
 }
 
 function sameHost(url, base) {
@@ -126,6 +144,7 @@ async function crawl() {
     const issues = [];
     const warnings = [];
     const pageMeta = { url: normalize(pageUrl), issues, warnings };
+    const isHomepage = new URL(pageUrl).pathname === '/';
 
     // Titles & description
     const title = $('head title').first().text().trim();
@@ -136,10 +155,11 @@ async function crawl() {
     if (!description) issues.push('missing <meta name="description">');
     else if (description.length < 50 || description.length > 160) warnings.push(`description length ${description.length} outside 50-160`);
 
-    // Canonical
+    // Canonical (per page, not hardcoded to the homepage)
     const canonical = $('link[rel="canonical"]').attr('href') || '';
-    if (normalize(canonical) !== normalize(EXPECTED_CANONICAL)) {
-      issues.push(canonical ? `canonical "${canonical}" != ${EXPECTED_CANONICAL}` : 'missing <link rel="canonical">');
+    const expectedCanonical = expectedCanonicalFor(pageUrl);
+    if (normalize(canonical) !== normalize(expectedCanonical)) {
+      issues.push(canonical ? `canonical "${canonical}" != ${expectedCanonical}` : 'missing <link rel="canonical">');
     }
 
     // Search verification
@@ -180,9 +200,11 @@ async function crawl() {
     }).length;
     if (svgNoLabel) warnings.push(`${svgNoLabel} <svg> without accessible label`);
 
-    // JS-rendered fallback audit
-    const loadModelText = $('#bespoke-load-model').text().trim();
-    if (loadModelText.length < 5) warnings.push('#bespoke-load-model has no fallback content');
+    // JS-rendered fallback audit (homepage only)
+    if (isHomepage) {
+      const loadModelText = $('#bespoke-load-model').text().trim();
+      if (loadModelText.length < 5) warnings.push('#bespoke-load-model has no fallback content');
+    }
 
     report.routes.push(pageMeta);
 
@@ -221,10 +243,13 @@ if (target.hash && !target.pathname && !target.search) {
       }
     });
 
-// Audit same-page anchor links for homepage sections referenced by nav.
-    ['bespoke', 'delivery', 'guided', 'testimonials', 'about', 'routes', 'contact'].forEach((id) => {
-      if (!$('#' + id).length) report.brokenLinks.push({ url: normalize(pageUrl) + '#' + id, status: 404, source: 'missing section anchor' });
-    });
+    // Audit homepage section anchors only on the homepage. Other documents
+    // (for example /privacy/) legitimately do not contain these sections.
+    if (isHomepage) {
+      ['bespoke', 'delivery', 'guided', 'testimonials', 'about', 'routes', 'contact'].forEach((id) => {
+        if (!$('#' + id).length) report.brokenLinks.push({ url: normalize(pageUrl) + '#' + id, status: 404, source: 'missing section anchor' });
+      });
+    }
   }
 
   // External link status checks

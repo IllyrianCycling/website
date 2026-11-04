@@ -48,7 +48,8 @@ function buildSitemap() {
   const root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   const tail = '</urlset>\n';
   const home = `  <url>\n    <loc>${HOME}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
-  return head + root + home + tail;
+  const privacy = `  <url>\n    <loc>${HOME}privacy/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.3</priority>\n  </url>\n`;
+  return head + root + home + privacy + tail;
 }
 
 function buildRobots() {
@@ -163,7 +164,7 @@ function main() {
     injectInline(schema, arg('--index', null));
   }
 
-  console.log('sitemap.xml entries: 1');
+  console.log('sitemap.xml entries: 2');
   console.log('robots.txt written');
   console.log('schema.json written (' + schema['@graph'].length + ' @type nodes)');
 }
