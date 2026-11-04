@@ -171,5 +171,17 @@
     <a href="/" class="legal-back-link">&larr; Back to Illyrian Cycling</a>
   </main>
 
+  <footer>
+    <p class="footer-copyright">© <span id="copyright-year">2026</span> illyriancycling.cc. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Auto-update the footer copyright year.
+    (function () {
+      var el = document.getElementById('copyright-year');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+
 </body>
 </html>
