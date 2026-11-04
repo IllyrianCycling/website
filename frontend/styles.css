@@ -1219,7 +1219,16 @@ footer {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--text-muted);
+}
+
+/* Mobile: break the copyright bar after the domain so "All rights reserved."
+   sits on its own line. Desktop keeps the single-line bar. */
+@media (max-width: 767px) {
+  .footer-rights {
+    display: block;
+  }
 }
 
 /* FLOATING ACTION STACK */
