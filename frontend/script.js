@@ -1,6 +1,12 @@
 const scrollProgress = document.querySelector('.scroll-progress');
 let ticking = false;
 
+// Auto-update the footer copyright year.
+const copyrightYear = document.getElementById('copyright-year');
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
+
 if (scrollProgress) {
   window.addEventListener('scroll', () => {
     if (!ticking) {
