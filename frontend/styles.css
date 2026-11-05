@@ -1211,6 +1211,15 @@ footer {
   padding: 2.5rem 2rem;
   border-top: 1px solid var(--card-border);
   background: var(--bg-base);
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
 }
 
 .footer-copyright {
@@ -1223,12 +1232,24 @@ footer {
   color: var(--text-muted);
 }
 
-/* Mobile: break the copyright bar after the domain so "All rights reserved."
-   sits on its own line. Desktop keeps the single-line bar. */
-@media (max-width: 767px) {
-  .footer-rights {
-    display: block;
-  }
+.copyright-symbol {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.footer-terms {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-soft);
+  transition: color 0.3s ease;
+}
+
+.footer-terms:hover {
+  color: var(--accent);
 }
 
 /* FLOATING ACTION STACK */
@@ -2426,10 +2447,10 @@ section.routes .section-intro {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 720px;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 2rem 2rem 5rem;
-  text-align: center;
+  padding: 3rem 2rem 5rem;
+  text-align: left;
 }
 
 .legal-eyebrow {
@@ -2438,6 +2459,7 @@ section.routes .section-intro {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--accent);
 }
 
@@ -2448,40 +2470,44 @@ section.routes .section-intro {
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0.04em;
+  text-align: left;
   text-transform: uppercase;
   text-wrap: balance;
   color: #f0ece4;
 }
 
 .legal-meta {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--card-border);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
+  text-align: left;
   color: var(--text-muted);
 }
 
 .legal section {
-  margin-top: 2.25rem;
+  margin-top: 2.75rem;
 }
 
 .legal h2 {
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  text-align: left;
   text-wrap: balance;
   color: var(--text-primary);
 }
 
 .legal h3 {
-  margin: 1.5rem 0 0.6rem;
+  margin: 1.75rem 0 0.75rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
+  text-align: left;
   text-wrap: balance;
   color: var(--text-primary);
 }
@@ -2489,25 +2515,28 @@ section.routes .section-intro {
 .legal p,
 .legal li {
   font-size: 0.95rem;
-  line-height: 1.8;
-  text-wrap: balance;
+  line-height: 1.7;
+  text-align: left;
+  text-wrap: pretty;
   color: var(--text-soft);
 }
 
-.legal p + p {
-  margin-top: 0.9rem;
+.legal p + p,
+.legal ul + p {
+  margin-top: 1rem;
 }
 
 .legal ul {
-  max-width: 60ch;
-  margin: 0.75rem auto 0;
+  width: 100%;
+  margin: 0.85rem 0 0;
   padding-left: 1.5rem;
   list-style-position: outside;
   text-align: left;
 }
 
 .legal li {
-  margin-top: 0.45rem;
+  margin-top: 0.5rem;
+  padding-left: 0.35rem;
   text-align: left;
 }
 
