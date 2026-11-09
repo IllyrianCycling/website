@@ -1334,6 +1334,11 @@ footer a {
   letter-spacing: 0.1em;
 }
 
+/* Breaks that exist only on mobile; desktop ignores them entirely. */
+.br-mobile-only {
+  display: none;
+}
+
 /* ============================================================ */
 /* RESPONSIVE
 /* ============================================================ */
@@ -1791,6 +1796,10 @@ footer a {
      principle / core) keep their break; desktop markup is untouched. */
   .br-desktop-only {
     display: none;
+  }
+
+  .br-mobile-only {
+    display: inline;
   }
 
   /* With the desktop break hidden, the "THE FULL EXPERIENCE" label becomes
@@ -2700,11 +2709,17 @@ section.routes .section-intro {
 }
 
 /* One-column camp grid: no card gap to line up with, so let the label column
-   size itself while the shared grid still keeps every colon aligned. */
+   size itself while the shared grid still keeps every colon aligned. The
+   colon column is pinned at ~30% of the schedule width. */
 @media (max-width: 767px) {
   .camp-schedule {
-    grid-template-columns: auto max-content 1fr;
+    grid-template-columns: minmax(max-content, 30%) max-content 1fr;
     column-gap: 0.35em;
     margin-top: var(--space-lg);
+  }
+
+  /* Arrival / riding / departure descriptors are desktop-only. */
+  .camp-schedule-window {
+    display: none;
   }
 }
