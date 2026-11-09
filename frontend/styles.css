@@ -1497,7 +1497,7 @@ footer a {
     flex-direction: column;
     height: auto;
     gap: var(--space-xs);
-    font-size: clamp(0.825rem, 2.75vw, 0.9625rem);
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
     line-height: 1.4;
   }
 
@@ -1849,10 +1849,18 @@ footer a {
     font-size: clamp(0.6rem, 2.4vw, 0.656rem);
   }
 
-  /* Extra breathing room between the hero title and the location meta. */
+  /* The location / coordinates / UNMAPPED line is the fixed anchor of the
+     hero stack. The title and eyebrow sit 15% further above it: widen the
+     title→meta gap by 15% and counter-shift the stack by half that growth,
+     which lifts the eyebrow and title while the meta line stays put. */
+  .hero-inner {
+    --hero-gap-grow: calc(68px * 0.15);
+    top: calc(var(--hero-gap-grow) / -2);
+  }
+
   .hero-meta {
-    margin-top: 2.75rem;
-    font-size: clamp(0.825rem, 2.75vw, 0.9625rem);
+    margin-top: calc(2.75rem + var(--hero-gap-grow));
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
   }
 
   /* Road.cc quote - the shrink-wrapped flex item must span the column so
@@ -1916,6 +1924,7 @@ footer a {
 
   .hero-inner {
     transform: none;
+    --hero-gap-grow: calc(37.6px * 0.15);
   }
 
   .hero-eyebrow {
@@ -1923,7 +1932,7 @@ footer a {
   }
 
   .hero-meta {
-    margin-top: 0.85rem;
+    margin-top: calc(0.85rem + var(--hero-gap-grow));
     margin-bottom: 0;
   }
 
@@ -1959,6 +1968,7 @@ footer a {
 
   .hero-inner {
     padding: 0 var(--space-md);
+    --hero-gap-grow: calc(64px * 0.15);
   }
 
   .hero-inner h1 .hi-line,
