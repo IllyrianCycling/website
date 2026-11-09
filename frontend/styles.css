@@ -2642,3 +2642,59 @@ section.routes .section-intro {
     display: none;
   }
 }
+
+/* Camp schedule
+   One grid for every line, so the colon column is shared and always aligned.
+   The first column is sized to end just before the gap between the first two
+   camp cards, placing the colon column directly under that gap. */
+.camp-schedule {
+  --camp-grid-gap: 1.5rem;
+  --schedule-column-gap: 0.5em;
+  display: grid;
+  grid-template-columns:
+    calc(100% / 3 - var(--camp-grid-gap) / 6 - var(--schedule-column-gap) - 0.5ch)
+    max-content
+    1fr;
+  column-gap: var(--schedule-column-gap);
+  align-items: baseline;
+  width: 100%;
+  margin: 2.5rem auto 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: var(--text-soft);
+}
+
+.camp-schedule-label {
+  text-align: right;
+}
+
+.camp-schedule-colon {
+  width: 1ch;
+  text-align: center;
+}
+
+.camp-schedule-detail {
+  text-align: left;
+}
+
+/* Two-column camp grid: its single card gap is the centre of the grid. */
+@media (max-width: 1024px) {
+  .camp-schedule {
+    grid-template-columns:
+      calc(100% / 2 - var(--schedule-column-gap) - 0.5ch)
+      max-content
+      1fr;
+  }
+}
+
+/* One-column camp grid: no card gap to line up with, so let the label column
+   size itself while the shared grid still keeps every colon aligned. */
+@media (max-width: 767px) {
+  .camp-schedule {
+    grid-template-columns: auto max-content 1fr;
+    column-gap: 0.35em;
+    margin-top: var(--space-lg);
+  }
+}
