@@ -593,6 +593,12 @@ section.routes .section-intro .block-label {
   margin-bottom: 0.6rem;
 }
 
+/* Breathing room under the inline "THE FULL EXPERIENCE" label in body copy. */
+.choose-desc .choose-tag {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
 .choose-sub {
   font-family: var(--font-display);
   font-weight: 400;
@@ -657,7 +663,7 @@ section.routes .section-intro .block-label {
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent);
   margin: -0.5rem 0 2.5rem;
 }
 
