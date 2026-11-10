@@ -490,6 +490,14 @@ section.routes .section-intro .block-label {
   line-height: 1.6;
 }
 
+@media (max-width: 767px) {
+  /* Extra breathing room between the two-line lead and the body copy. */
+  section.routes .section-intro .block-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+
 /* CARD SURFACE */
 .card {
   background: var(--card-bg);
