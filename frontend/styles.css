@@ -482,6 +482,14 @@ h2 {
   margin-top: 0;
 }
 
+/* Lead line of the Three Zones intro reuses the eyebrow treatment so it reads
+   as a muted, label-like accent rather than a headline. */
+section.routes .section-intro .block-label {
+  display: inline;
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* CARD SURFACE */
 .card {
   background: var(--card-bg);
