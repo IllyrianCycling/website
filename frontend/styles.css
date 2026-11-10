@@ -1352,8 +1352,10 @@ footer a {
 }
 
 .bespoke-open {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 /* Breaks that exist only on mobile; desktop ignores them entirely. */
@@ -1772,6 +1774,7 @@ footer a {
   .block-label,
   .choose-tag,
   .bespoke-section .choose-tag,
+  .bespoke-open,
   .choose-relationship,
   .camps-range,
   .camp-month,
